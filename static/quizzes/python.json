@@ -1,0 +1,55 @@
+{
+    "category": "Python",
+    "level": "Beginner",
+    "questions": [
+        {
+            "id": "p1",
+            "question": "What is the correct file extension for Python files?",
+            "options": [
+                {
+                    "id": "a",
+                    "text": ".pyth"
+                },
+                {
+                    "id": "b",
+                    "text": ".pt"
+                },
+                {
+                    "id": "c",
+                    "text": ".py"
+                },
+                {
+                    "id": "d",
+                    "text": ".pe"
+                }
+            ],
+            "correctOptionId": "c",
+            "explanation": "Python files are saved with the .py extension.",
+            "hint": "It ends with the first two letters of the language name."
+        },
+        {
+            "id": "p2",
+            "question": "Which keyword is used to create a function in Python?",
+            "options": [
+                {
+                    "id": "a",
+                    "text": "function"
+                },
+                {
+                    "id": "b",
+                    "text": "def"
+                },
+                {
+                    "id": "c",
+                    "text": "fun"
+                },
+                {
+                    "id": "d",
+                    "text": "define"
+                }
+            ],
+            "correctOptionId": "b",
+            "explanation": "The def keyword is used to define a function in Python."
+        }
+    ]
+}

@@ -1,0 +1,331 @@
+{
+  "category": "Java",
+  "level": "Beginner",
+  "questions": [
+    {
+      "id": "j1",
+      "question": "What is the size of int variable in Java?",
+      "hint": "Imagine int as a fixed-size lunchbox that always holds 32 chocolates.",
+      "options": [
+        { "id": "a", "text": "8 bit" },
+        { "id": "b", "text": "16 bit" },
+        { "id": "c", "text": "32 bit" },
+        { "id": "d", "text": "64 bit" }
+      ],
+      "correctOptionId": "c",
+      "explanation": "In Java, int is always a 32-bit signed integer."
+    },
+
+    {
+      "id": "j2",
+      "question": "Which of the following is not a Java feature?",
+      "hint": "Java avoids dangerous tools — sharp memory knives are removed.",
+      "options": [
+        { "id": "a", "text": "Dynamic" },
+        { "id": "b", "text": "Architecture Neutral" },
+        { "id": "c", "text": "Use of pointers" },
+        { "id": "d", "text": "Object-oriented" }
+      ],
+      "correctOptionId": "c"
+    },
+
+    {
+      "id": "j3",
+      "question": "What is JVM?",
+      "hint": "One language, many countries — JVM is the translator.",
+      "options": [
+        { "id": "a", "text": "Java Variable Machine" },
+        { "id": "b", "text": "Java Virtual Machine" },
+        { "id": "c", "text": "Java Verified Machine" },
+        { "id": "d", "text": "Java Version Manager" }
+      ],
+      "correctOptionId": "b"
+    },
+
+    {
+      "id": "j4",
+      "question": "Which keyword is used to inherit a class in Java?",
+      "hint": "Children always extend their parents.",
+      "options": [
+        { "id": "a", "text": "this" },
+        { "id": "b", "text": "super" },
+        { "id": "c", "text": "extends" },
+        { "id": "d", "text": "implements" }
+      ],
+      "correctOptionId": "c"
+    },
+
+    {
+      "id": "j5",
+      "question": "Which method is the entry point of a Java program?",
+      "hint": "Every building has a main gate.",
+      "options": [
+        { "id": "a", "text": "start()" },
+        { "id": "b", "text": "main()" },
+        { "id": "c", "text": "run()" },
+        { "id": "d", "text": "init()" }
+      ],
+      "correctOptionId": "b"
+    },
+
+    {
+      "id": "j6",
+      "question": "Which of these is not a primitive data type?",
+      "hint": "Simple boxes are primitive — fancy gift boxes are objects.",
+      "options": [
+        { "id": "a", "text": "int" },
+        { "id": "b", "text": "float" },
+        { "id": "c", "text": "String" },
+        { "id": "d", "text": "boolean" }
+      ],
+      "correctOptionId": "c"
+    },
+
+    {
+      "id": "j7",
+      "question": "What is method overloading?",
+      "hint": "Same name, different outfits.",
+      "options": [
+        { "id": "a", "text": "Same name, different parameters" },
+        { "id": "b", "text": "Same name, same parameters" },
+        { "id": "c", "text": "Different name, same parameters" },
+        { "id": "d", "text": "Different name, different parameters" }
+      ],
+      "correctOptionId": "a"
+    },
+
+    {
+      "id": "j8",
+      "question": "Which keyword prevents inheritance?",
+      "hint": "Final means no future generations.",
+      "options": [
+        { "id": "a", "text": "static" },
+        { "id": "b", "text": "final" },
+        { "id": "c", "text": "private" },
+        { "id": "d", "text": "protected" }
+      ],
+      "correctOptionId": "b"
+    },
+
+    {
+      "id": "j9",
+      "question": "Which loop executes at least once?",
+      "hint": "Do first, check later.",
+      "options": [
+        { "id": "a", "text": "for" },
+        { "id": "b", "text": "while" },
+        { "id": "c", "text": "do-while" },
+        { "id": "d", "text": "foreach" }
+      ],
+      "correctOptionId": "c"
+    },
+
+    {
+      "id": "j10",
+      "question": "Which package contains Scanner class?",
+      "hint": "Useful tools live in utility room.",
+      "options": [
+        { "id": "a", "text": "java.io" },
+        { "id": "b", "text": "java.util" },
+        { "id": "c", "text": "java.lang" },
+        { "id": "d", "text": "java.net" }
+      ],
+      "correctOptionId": "b"
+    },
+
+    {
+      "id": "j11",
+      "question": "What is garbage collection?",
+      "hint": "Robot cleaner removes unused stuff.",
+      "options": [
+        { "id": "a", "text": "Manual memory deletion" },
+        { "id": "b", "text": "Automatic memory cleanup" },
+        { "id": "c", "text": "Error handling" },
+        { "id": "d", "text": "Thread management" }
+      ],
+      "correctOptionId": "b"
+    },
+
+    {
+      "id": "j12",
+      "question": "Which keyword is used to handle exceptions?",
+      "hint": "Try before you cry.",
+      "options": [
+        { "id": "a", "text": "throw" },
+        { "id": "b", "text": "catch" },
+        { "id": "c", "text": "try" },
+        { "id": "d", "text": "finally" }
+      ],
+      "correctOptionId": "c"
+    },
+
+    {
+      "id": "j13",
+      "question": "Which collection does not allow duplicates?",
+      "hint": "Set means unique items only.",
+      "options": [
+        { "id": "a", "text": "List" },
+        { "id": "b", "text": "Set" },
+        { "id": "c", "text": "ArrayList" },
+        { "id": "d", "text": "Vector" }
+      ],
+      "correctOptionId": "b"
+    },
+
+    {
+      "id": "j14",
+      "question": "Which keyword refers to current object?",
+      "hint": "Me, myself, and I.",
+      "options": [
+        { "id": "a", "text": "super" },
+        { "id": "b", "text": "this" },
+        { "id": "c", "text": "self" },
+        { "id": "d", "text": "current" }
+      ],
+      "correctOptionId": "b"
+    },
+
+    {
+      "id": "j15",
+      "question": "What is JDK?",
+      "hint": "Developer’s toolbox.",
+      "options": [
+        { "id": "a", "text": "Java Data Kit" },
+        { "id": "b", "text": "Java Development Kit" },
+        { "id": "c", "text": "Java Debug Kit" },
+        { "id": "d", "text": "Java Design Kit" }
+      ],
+      "correctOptionId": "b"
+    },
+
+    {
+      "id": "j16",
+      "question": "Which operator is used for object comparison?",
+      "hint": "Compare inside, not address.",
+      "options": [
+        { "id": "a", "text": "==" },
+        { "id": "b", "text": "equals()" },
+        { "id": "c", "text": "!=" },
+        { "id": "d", "text": "<>" }
+      ],
+      "correctOptionId": "b"
+    },
+
+    {
+      "id": "j17",
+      "question": "Which access modifier is most restrictive?",
+      "hint": "Top secret room.",
+      "options": [
+        { "id": "a", "text": "public" },
+        { "id": "b", "text": "protected" },
+        { "id": "c", "text": "default" },
+        { "id": "d", "text": "private" }
+      ],
+      "correctOptionId": "d"
+    },
+
+    {
+      "id": "j18",
+      "question": "What is constructor?",
+      "hint": "Factory setup machine.",
+      "options": [
+        { "id": "a", "text": "Method to destroy object" },
+        { "id": "b", "text": "Method to initialize object" },
+        { "id": "c", "text": "Static method" },
+        { "id": "d", "text": "Final method" }
+      ],
+      "correctOptionId": "b"
+    },
+
+    {
+      "id": "j19",
+      "question": "Which keyword is used to create object?",
+      "hint": "Birth certificate of objects.",
+      "options": [
+        { "id": "a", "text": "create" },
+        { "id": "b", "text": "new" },
+        { "id": "c", "text": "malloc" },
+        { "id": "d", "text": "alloc" }
+      ],
+      "correctOptionId": "b"
+    },
+
+    {
+      "id": "j20",
+      "question": "Which interface is used for sorting?",
+      "hint": "Compare before arranging.",
+      "options": [
+        { "id": "a", "text": "Serializable" },
+        { "id": "b", "text": "Comparable" },
+        { "id": "c", "text": "Cloneable" },
+        { "id": "d", "text": "Runnable" }
+      ],
+      "correctOptionId": "b"
+    },
+
+    {
+      "id": "j21",
+      "question": "Which exception occurs when dividing by zero?",
+      "hint": "Math hates zero in denominator.",
+      "options": [
+        { "id": "a", "text": "NullPointerException" },
+        { "id": "b", "text": "ArithmeticException" },
+        { "id": "c", "text": "IOException" },
+        { "id": "d", "text": "IndexOutOfBoundsException" }
+      ],
+      "correctOptionId": "b"
+    },
+
+    {
+      "id": "j22",
+      "question": "Which is used to read input from console?",
+      "hint": "Many roads, same destination.",
+      "options": [
+        { "id": "a", "text": "Scanner" },
+        { "id": "b", "text": "System.in" },
+        { "id": "c", "text": "BufferedReader" },
+        { "id": "d", "text": "All of these" }
+      ],
+      "correctOptionId": "d"
+    },
+
+    {
+      "id": "j23",
+      "question": "Which collection is synchronized?",
+      "hint": "Old-school safety system.",
+      "options": [
+        { "id": "a", "text": "ArrayList" },
+        { "id": "b", "text": "HashMap" },
+        { "id": "c", "text": "Vector" },
+        { "id": "d", "text": "HashSet" }
+      ],
+      "correctOptionId": "c"
+    },
+
+    {
+      "id": "j24",
+      "question": "What is polymorphism?",
+      "hint": "One actor, many roles.",
+      "options": [
+        { "id": "a", "text": "One method many forms" },
+        { "id": "b", "text": "One class many objects" },
+        { "id": "c", "text": "Many classes one method" },
+        { "id": "d", "text": "Many objects one class" }
+      ],
+      "correctOptionId": "a"
+    },
+
+    {
+      "id": "j25",
+      "question": "Which keyword is used to stop program execution manually?",
+      "hint": "Emergency exit door.",
+      "options": [
+        { "id": "a", "text": "break" },
+        { "id": "b", "text": "stop" },
+        { "id": "c", "text": "exit" },
+        { "id": "d", "text": "System.exit()" }
+      ],
+      "correctOptionId": "d"
+    }
+  ]
+}

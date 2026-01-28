@@ -1,0 +1,30 @@
+{
+    "category": "React",
+    "level": "Beginner",
+    "questions": [
+        {
+            "id": "r1",
+            "question": "What is a React component?",
+            "options": [
+                { "id": "a", "text": "A function that returns HTML" },
+                { "id": "b", "text": "A database table" },
+                { "id": "c", "text": "A CSS file" },
+                { "id": "d", "text": "A server-side script" }
+            ],
+            "correctOptionId": "a",
+            "explanation": "Components are the building blocks of a React application's UI."
+        },
+        {
+            "id": "r2",
+            "question": "What hook is used to manage state in a functional component?",
+            "options": [
+                { "id": "a", "text": "useEffect" },
+                { "id": "b", "text": "useState" },
+                { "id": "c", "text": "useContext" },
+                { "id": "d", "text": "useReducer" }
+            ],
+            "correctOptionId": "b",
+            "explanation": "useState is the Hook that lets you add React state to function components."
+        }
+    ]
+}
