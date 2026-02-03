@@ -3,7 +3,7 @@ import { config } from '../config/env.config';
 
 export const signAccessToken = (userId: string): string => {
     return jwt.sign({ id: userId }, config.jwtSecret, {
-        expiresIn: '15m', // Access token expires quickly
+        expiresIn: '24h', // Extended for testing
     });
 };
 

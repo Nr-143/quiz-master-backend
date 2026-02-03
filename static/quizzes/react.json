@@ -1,30 +1,306 @@
 {
-    "category": "React",
-    "level": "Beginner",
-    "questions": [
-        {
-            "id": "r1",
-            "question": "What is a React component?",
-            "options": [
-                { "id": "a", "text": "A function that returns HTML" },
-                { "id": "b", "text": "A database table" },
-                { "id": "c", "text": "A CSS file" },
-                { "id": "d", "text": "A server-side script" }
-            ],
-            "correctOptionId": "a",
-            "explanation": "Components are the building blocks of a React application's UI."
-        },
-        {
-            "id": "r2",
-            "question": "What hook is used to manage state in a functional component?",
-            "options": [
-                { "id": "a", "text": "useEffect" },
-                { "id": "b", "text": "useState" },
-                { "id": "c", "text": "useContext" },
-                { "id": "d", "text": "useReducer" }
-            ],
-            "correctOptionId": "b",
-            "explanation": "useState is the Hook that lets you add React state to function components."
-        }
-    ]
+  "category": "React",
+  "level": "Beginner",
+  "questions": [
+    {
+      "id": "r1",
+      "question": "What is React?",
+      "options": [
+        { "id": "a", "text": "A backend framework" },
+        { "id": "b", "text": "A JavaScript library for building UI" },
+        { "id": "c", "text": "A database" },
+        { "id": "d", "text": "A CSS framework" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "React is a JavaScript library used to build user interfaces."
+    },
+    {
+      "id": "r2",
+      "question": "What is a React component?",
+      "options": [
+        { "id": "a", "text": "A function or class that returns UI" },
+        { "id": "b", "text": "A database table" },
+        { "id": "c", "text": "A CSS file" },
+        { "id": "d", "text": "A server-side script" }
+      ],
+      "correctOptionId": "a",
+      "explanation": "Components are reusable building blocks of a React UI."
+    },
+    {
+      "id": "r3",
+      "question": "Which command is used to create a React app?",
+      "options": [
+        { "id": "a", "text": "npm create react-app" },
+        { "id": "b", "text": "npx create-react-app" },
+        { "id": "c", "text": "react new app" },
+        { "id": "d", "text": "npm react-start" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "npx create-react-app is commonly used to bootstrap a React app."
+    },
+    {
+      "id": "r4",
+      "question": "What is JSX?",
+      "options": [
+        { "id": "a", "text": "A JavaScript extension syntax" },
+        { "id": "b", "text": "A CSS preprocessor" },
+        { "id": "c", "text": "A database query language" },
+        { "id": "d", "text": "A template engine" }
+      ],
+      "correctOptionId": "a",
+      "explanation": "JSX allows writing HTML-like syntax inside JavaScript."
+    },
+    {
+      "id": "r5",
+      "question": "Which hook is used to manage state?",
+      "options": [
+        { "id": "a", "text": "useEffect" },
+        { "id": "b", "text": "useState" },
+        { "id": "c", "text": "useContext" },
+        { "id": "d", "text": "useRef" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "useState allows functional components to manage state."
+    },
+    {
+      "id": "r6",
+      "question": "Which hook is used for side effects?",
+      "options": [
+        { "id": "a", "text": "useState" },
+        { "id": "b", "text": "useReducer" },
+        { "id": "c", "text": "useEffect" },
+        { "id": "d", "text": "useMemo" }
+      ],
+      "correctOptionId": "c",
+      "explanation": "useEffect handles side effects like data fetching."
+    },
+    {
+      "id": "r7",
+      "question": "What is the virtual DOM?",
+      "options": [
+        { "id": "a", "text": "A copy of the real DOM kept in memory" },
+        { "id": "b", "text": "A database" },
+        { "id": "c", "text": "A browser API" },
+        { "id": "d", "text": "A server-side DOM" }
+      ],
+      "correctOptionId": "a",
+      "explanation": "Virtual DOM improves performance by minimizing real DOM updates."
+    },
+    {
+      "id": "r8",
+      "question": "How do you pass data to a component?",
+      "options": [
+        { "id": "a", "text": "State" },
+        { "id": "b", "text": "Props" },
+        { "id": "c", "text": "Context" },
+        { "id": "d", "text": "Refs" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "Props are used to pass data to components."
+    },
+    {
+      "id": "r9",
+      "question": "Props are __________.",
+      "options": [
+        { "id": "a", "text": "Mutable" },
+        { "id": "b", "text": "Immutable" },
+        { "id": "c", "text": "Optional" },
+        { "id": "d", "text": "Private" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "Props are read-only and cannot be modified."
+    },
+    {
+      "id": "r10",
+      "question": "What is state in React?",
+      "options": [
+        { "id": "a", "text": "A permanent variable" },
+        { "id": "b", "text": "An external API" },
+        { "id": "c", "text": "A component's local data" },
+        { "id": "d", "text": "A CSS property" }
+      ],
+      "correctOptionId": "c",
+      "explanation": "State stores data that can change over time."
+    },
+    {
+      "id": "r11",
+      "question": "Which hook is used to share data globally?",
+      "options": [
+        { "id": "a", "text": "useEffect" },
+        { "id": "b", "text": "useContext" },
+        { "id": "c", "text": "useReducer" },
+        { "id": "d", "text": "useCallback" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "useContext allows data sharing without prop drilling."
+    },
+    {
+      "id": "r12",
+      "question": "What does useRef do?",
+      "options": [
+        { "id": "a", "text": "Manages state" },
+        { "id": "b", "text": "Handles lifecycle" },
+        { "id": "c", "text": "Accesses DOM elements" },
+        { "id": "d", "text": "Fetches data" }
+      ],
+      "correctOptionId": "c",
+      "explanation": "useRef is commonly used to access DOM elements."
+    },
+    {
+      "id": "r13",
+      "question": "What is prop drilling?",
+      "options": [
+        { "id": "a", "text": "Passing props through multiple components" },
+        { "id": "b", "text": "Updating state" },
+        { "id": "c", "text": "Fetching data" },
+        { "id": "d", "text": "Handling events" }
+      ],
+      "correctOptionId": "a",
+      "explanation": "Prop drilling happens when props are passed through many layers."
+    },
+    {
+      "id": "r14",
+      "question": "What is a controlled component?",
+      "options": [
+        { "id": "a", "text": "A component with internal state" },
+        { "id": "b", "text": "A component controlled by props/state" },
+        { "id": "c", "text": "A class component" },
+        { "id": "d", "text": "A pure component" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "Controlled components use state to control form inputs."
+    },
+    {
+      "id": "r15",
+      "question": "Which method renders JSX to the DOM?",
+      "options": [
+        { "id": "a", "text": "ReactDOM.render()" },
+        { "id": "b", "text": "render()" },
+        { "id": "c", "text": "mount()" },
+        { "id": "d", "text": "append()" }
+      ],
+      "correctOptionId": "a",
+      "explanation": "ReactDOM.render() renders React elements to the DOM."
+    },
+    {
+      "id": "r16",
+      "question": "What is useReducer mainly used for?",
+      "options": [
+        { "id": "a", "text": "Fetching data" },
+        { "id": "b", "text": "Managing complex state" },
+        { "id": "c", "text": "Styling components" },
+        { "id": "d", "text": "Routing" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "useReducer is useful for complex state logic."
+    },
+    {
+      "id": "r17",
+      "question": "Which hook memoizes a function?",
+      "options": [
+        { "id": "a", "text": "useMemo" },
+        { "id": "b", "text": "useEffect" },
+        { "id": "c", "text": "useCallback" },
+        { "id": "d", "text": "useRef" }
+      ],
+      "correctOptionId": "c",
+      "explanation": "useCallback memoizes functions."
+    },
+    {
+      "id": "r18",
+      "question": "What is React.Fragment used for?",
+      "options": [
+        { "id": "a", "text": "Grouping elements without extra DOM nodes" },
+        { "id": "b", "text": "Styling" },
+        { "id": "c", "text": "Routing" },
+        { "id": "d", "text": "State management" }
+      ],
+      "correctOptionId": "a",
+      "explanation": "Fragments group elements without adding extra nodes."
+    },
+    {
+      "id": "r19",
+      "question": "Which key is required when rendering lists?",
+      "options": [
+        { "id": "a", "text": "index" },
+        { "id": "b", "text": "id" },
+        { "id": "c", "text": "key" },
+        { "id": "d", "text": "value" }
+      ],
+      "correctOptionId": "c",
+      "explanation": "Keys help React identify list items."
+    },
+    {
+      "id": "r20",
+      "question": "Which library is commonly used for routing?",
+      "options": [
+        { "id": "a", "text": "Redux" },
+        { "id": "b", "text": "React Router" },
+        { "id": "c", "text": "Axios" },
+        { "id": "d", "text": "MobX" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "React Router is used for navigation."
+    },
+    {
+      "id": "r21",
+      "question": "What is lifting state up?",
+      "options": [
+        { "id": "a", "text": "Moving state to parent component" },
+        { "id": "b", "text": "Deleting state" },
+        { "id": "c", "text": "Using context" },
+        { "id": "d", "text": "Using props" }
+      ],
+      "correctOptionId": "a",
+      "explanation": "Lifting state up helps share data between components."
+    },
+    {
+      "id": "r22",
+      "question": "What is Redux mainly used for?",
+      "options": [
+        { "id": "a", "text": "Styling" },
+        { "id": "b", "text": "Global state management" },
+        { "id": "c", "text": "Routing" },
+        { "id": "d", "text": "Testing" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "Redux manages global application state."
+    },
+    {
+      "id": "r23",
+      "question": "What does useMemo do?",
+      "options": [
+        { "id": "a", "text": "Memoizes values" },
+        { "id": "b", "text": "Handles effects" },
+        { "id": "c", "text": "Manages state" },
+        { "id": "d", "text": "Creates refs" }
+      ],
+      "correctOptionId": "a",
+      "explanation": "useMemo memoizes expensive computations."
+    },
+    {
+      "id": "r24",
+      "question": "Which lifecycle method runs after component mounts (hooks)?",
+      "options": [
+        { "id": "a", "text": "useEffect" },
+        { "id": "b", "text": "useState" },
+        { "id": "c", "text": "useRef" },
+        { "id": "d", "text": "useCallback" }
+      ],
+      "correctOptionId": "a",
+      "explanation": "useEffect runs after render."
+    },
+    {
+      "id": "r25",
+      "question": "React is mainly used for?",
+      "options": [
+        { "id": "a", "text": "Database management" },
+        { "id": "b", "text": "Server-side scripting" },
+        { "id": "c", "text": "Building user interfaces" },
+        { "id": "d", "text": "File handling" }
+      ],
+      "correctOptionId": "c",
+      "explanation": "React focuses on building UI components."
+    }
+  ]
 }

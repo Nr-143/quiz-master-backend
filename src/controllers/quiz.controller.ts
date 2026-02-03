@@ -64,7 +64,7 @@ export const validateAnswer = async (req: Request, res: Response, next: NextFunc
 // New endpoint to get quiz progress
 export const getQuizProgress = async (req: Request, res: Response, next: NextFunction) => {
     try {
-        const { category } = req.query;
+        const { category } = req.params;
         // @ts-ignore
         const userId = req.user?.id;
 
@@ -75,7 +75,7 @@ export const getQuizProgress = async (req: Request, res: Response, next: NextFun
             });
         }
 
-        const result = await quizService.getQuizProgress(userId, category as string);
+        const result = await quizService.getQuizProgress(userId, category);
 
         res.status(200).json({
             success: true,

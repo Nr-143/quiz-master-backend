@@ -175,13 +175,14 @@ export class QuizService {
         }
 
         return {
-            correct: isCorrect,
-            correctAnswer: correctOption?.text,
-            explanation: question.explanation,
-            pointsEarned,
-            creditsEarned,
-            xpEarned,
-            selectedAnswer: question.options.find(o => o.id === selectedOption)?.text
+          correct: isCorrect,
+          correctAnswer: correctOption?.text,
+          explanation: question.explanation || "",
+          pointsEarned,
+          creditsEarned,
+          xpEarned,
+          selectedAnswer: question.options.find((o) => o.id === selectedOption)
+            ?.text,
         };
     }
 

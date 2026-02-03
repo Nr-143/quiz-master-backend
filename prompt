@@ -1,0 +1,64 @@
+1)user login email and password + oauth support 
+2)forget password and reset password 
+3)login and register with neat ui 
+4)password and email and some users informations are should be store in users collection 
+5)session token should be present in headers and set session key in redis cache once token decode from headers , match session key is blocked or expired , active if expired refresh and latest token and request token not match logout users
+6)Only one user at a time , if logged in aonther device then logout from current device with 10s warning pop up 
+7)when new use enter some the qiz app and all the stuufs which is suitable for quiz app and SEO and users attraction 
+8)Subscription is the main part , we need to make users to get subscripted
+quiz page : 
+9)every spec like java , js , python.... quiz maitain history like 
+            which quiz is users currenlt and lastly answered
+            how mmuch sec he took to soleve problem 
+            dont allow to next quiz without complete current quiz ,
+            users can view already ans question wheather its write or wrong it should show correct ans and selected ans for preview
+            after ans every questin neat to show explanation defualty 
+            dont allow edit for already ans questions 
+            hints also give to all questions but for credits 2 for every 
+            if for hints no more credit , tthen open up the model as suprcitpion and then close it 
+            credit should be realt time so use sockeet , 
+            Note : explanation shoud com ftr sumit ans by hiiting ai like micro service , and also hints should show after api hit ans after credit fetch 
+            for every qution ans take score and mintains tha stuffs in separate collection 
+            some beutifull animation welcomed whic doesnot afftet dom and seo 
+            after complete one quiz make user level up and save in db 
+            what use feature what our compeditor are useing and which i can manage only single persnn only , not much 
+            it better if we show whic companies asked this question
+            also also companies are made quiz category also welcome ,  
+                         
+            
+10 ) test/ intervire test page : (this featuere avail only for paid and superadmin )
+
+          users can choose  from anny category and make questin bundle and save for themselved and share to users 
+          handle permission before submitting question form like allow hint and explanationn , and also private or public and based on tateen show first 
+          and also for paid users only most popular companies qustion
+          
+11) when users takes quiz or second llogin wee need to change sahoard and hero section for paid and new users ,old onwe ia hiided
+12)Everything shoud be role based 
+13)subscription 
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+FE : 
+   mobile resposive is really important 
+   security also more important 
+   important things dont keep in FE , fetch from BE 
+   Use advanced concepts and which ican manage 
+   color theme and font  is attractive and user friendly  
+   Every api should be call from centralized function ,
+   components and functions should be cear with  reason commends 
+   whitelabel concept is welcomed 
+   support for outh login and currnelty should be support normal login 
+   whereever the api response trigger credit insufficient , then subscription model should open 
+   small animations which attracts users and entertain users are welcomed 
+   
+BE :         
+          
+          
+            

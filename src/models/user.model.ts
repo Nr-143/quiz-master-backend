@@ -8,6 +8,8 @@ export interface IUser {
     username: string;
     email: string;
     password?: string;
+    phone?: string;
+    qualification?: string;
     role: 'user' | 'admin';
     xp: number;
     credits: number;
@@ -44,6 +46,8 @@ const UserSchema: Schema = new Schema(
         username: { type: String, required: true, unique: true, trim: true },
         email: { type: String, required: true, unique: true, lowercase: true, trim: true },
         password: { type: String, required: true, select: false },
+        phone: { type: String, trim: true },
+        qualification: { type: String, trim: true },
         role: { type: String, enum: ['user', 'admin'], default: 'user' },
         xp: { type: Number, default: 0 },
         credits: { type: Number, default: 50 },

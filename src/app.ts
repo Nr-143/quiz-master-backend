@@ -45,6 +45,8 @@ import authRoutes from './routes/auth.routes';
 import quizRoutes from './routes/quiz.routes';
 import userRoutes from './routes/user.routes';
 import scoreRoutes from './routes/score.routes';
+import examRoutes from './routes/exam.routes';
+import categoryRoutes from './routes/category.routes';
 
 // Routes
 app.use('/api/v1/auth', authRoutes);
@@ -52,6 +54,8 @@ app.use('/api/v1/quizzes', quizRoutes);
 app.use('/api/quiz', quizRoutes); // Alias for strict requirement
 app.use('/api/v1/users', userRoutes);
 app.use('/api/v1/scores', scoreRoutes);
+app.use('/api/v1/exams', examRoutes);
+app.use('/api/v1/categories', categoryRoutes);
 
 // 404 Handler
 app.use('*', (req: Request, res: Response, next: NextFunction) => {

@@ -1,55 +1,331 @@
 {
-    "category": "Python",
-    "level": "Beginner",
-    "questions": [
-        {
-            "id": "p1",
-            "question": "What is the correct file extension for Python files?",
-            "options": [
-                {
-                    "id": "a",
-                    "text": ".pyth"
-                },
-                {
-                    "id": "b",
-                    "text": ".pt"
-                },
-                {
-                    "id": "c",
-                    "text": ".py"
-                },
-                {
-                    "id": "d",
-                    "text": ".pe"
-                }
-            ],
-            "correctOptionId": "c",
-            "explanation": "Python files are saved with the .py extension.",
-            "hint": "It ends with the first two letters of the language name."
-        },
-        {
-            "id": "p2",
-            "question": "Which keyword is used to create a function in Python?",
-            "options": [
-                {
-                    "id": "a",
-                    "text": "function"
-                },
-                {
-                    "id": "b",
-                    "text": "def"
-                },
-                {
-                    "id": "c",
-                    "text": "fun"
-                },
-                {
-                    "id": "d",
-                    "text": "define"
-                }
-            ],
-            "correctOptionId": "b",
-            "explanation": "The def keyword is used to define a function in Python."
-        }
-    ]
+  "category": "Python",
+  "level": "Beginner",
+  "questions": [
+    {
+      "id": "p1",
+      "question": "What is the correct file extension for Python files?",
+      "options": [
+        { "id": "a", "text": ".pyth" },
+        { "id": "b", "text": ".pt" },
+        { "id": "c", "text": ".py" },
+        { "id": "d", "text": ".pe" }
+      ],
+      "correctOptionId": "c",
+      "explanation": "Python source files use the .py extension.",
+      "hint": "It uses the first two letters of Python."
+    },
+    {
+      "id": "p2",
+      "question": "Which keyword is used to define a function in Python?",
+      "options": [
+        { "id": "a", "text": "function" },
+        { "id": "b", "text": "def" },
+        { "id": "c", "text": "fun" },
+        { "id": "d", "text": "define" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "Functions in Python are defined using the def keyword.",
+      "hint": "Short for define."
+    },
+    {
+      "id": "p3",
+      "question": "Which data type is used to store text in Python?",
+      "options": [
+        { "id": "a", "text": "int" },
+        { "id": "b", "text": "float" },
+        { "id": "c", "text": "str" },
+        { "id": "d", "text": "bool" }
+      ],
+      "correctOptionId": "c",
+      "explanation": "Text data in Python is stored using the str type.",
+      "hint": "Short for string."
+    },
+    {
+      "id": "p4",
+      "question": "Which symbol is used for comments in Python?",
+      "options": [
+        { "id": "a", "text": "//" },
+        { "id": "b", "text": "/* */" },
+        { "id": "c", "text": "#" },
+        { "id": "d", "text": "--" }
+      ],
+      "correctOptionId": "c",
+      "explanation": "Python uses # to write single-line comments.",
+      "hint": "Same as hashtags."
+    },
+    {
+      "id": "p5",
+      "question": "Which function is used to display output in Python?",
+      "options": [
+        { "id": "a", "text": "echo()" },
+        { "id": "b", "text": "display()" },
+        { "id": "c", "text": "print()" },
+        { "id": "d", "text": "show()" }
+      ],
+      "correctOptionId": "c",
+      "explanation": "print() is used to display output in Python.",
+      "hint": "It prints text to the screen."
+    },
+    {
+      "id": "p6",
+      "question": "Which data type is used to store True or False?",
+      "options": [
+        { "id": "a", "text": "int" },
+        { "id": "b", "text": "bool" },
+        { "id": "c", "text": "str" },
+        { "id": "d", "text": "float" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "bool represents Boolean values: True or False.",
+      "hint": "Boolean type."
+    },
+    {
+      "id": "p7",
+      "question": "Which operator is used for exponentiation?",
+      "options": [
+        { "id": "a", "text": "^" },
+        { "id": "b", "text": "**" },
+        { "id": "c", "text": "//" },
+        { "id": "d", "text": "%" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "Python uses ** for exponentiation.",
+      "hint": "Two stars."
+    },
+    {
+      "id": "p8",
+      "question": "Which keyword is used to create a loop that runs while a condition is true?",
+      "options": [
+        { "id": "a", "text": "for" },
+        { "id": "b", "text": "loop" },
+        { "id": "c", "text": "while" },
+        { "id": "d", "text": "repeat" }
+      ],
+      "correctOptionId": "c",
+      "explanation": "The while loop runs as long as the condition is true.",
+      "hint": "Runs continuously while condition holds."
+    },
+    {
+      "id": "p9",
+      "question": "Which collection is ordered and changeable?",
+      "options": [
+        { "id": "a", "text": "set" },
+        { "id": "b", "text": "tuple" },
+        { "id": "c", "text": "list" },
+        { "id": "d", "text": "dictionary" }
+      ],
+      "correctOptionId": "c",
+      "explanation": "Lists are ordered and mutable in Python.",
+      "hint": "Uses square brackets."
+    },
+    {
+      "id": "p10",
+      "question": "Which collection is immutable?",
+      "options": [
+        { "id": "a", "text": "list" },
+        { "id": "b", "text": "set" },
+        { "id": "c", "text": "dictionary" },
+        { "id": "d", "text": "tuple" }
+      ],
+      "correctOptionId": "d",
+      "explanation": "Tuples cannot be modified after creation.",
+      "hint": "Uses parentheses."
+    },
+    {
+      "id": "p11",
+      "question": "How do you start a conditional statement in Python?",
+      "options": [
+        { "id": "a", "text": "if" },
+        { "id": "b", "text": "when" },
+        { "id": "c", "text": "check" },
+        { "id": "d", "text": "condition" }
+      ],
+      "correctOptionId": "a",
+      "explanation": "Conditional logic in Python starts with if.",
+      "hint": "Simple two-letter keyword."
+    },
+    {
+      "id": "p12",
+      "question": "Which keyword is used to handle exceptions?",
+      "options": [
+        { "id": "a", "text": "catch" },
+        { "id": "b", "text": "error" },
+        { "id": "c", "text": "except" },
+        { "id": "d", "text": "handle" }
+      ],
+      "correctOptionId": "c",
+      "explanation": "Exceptions are handled using try-except blocks.",
+      "hint": "Used after try."
+    },
+    {
+      "id": "p13",
+      "question": "What does len() function do?",
+      "options": [
+        { "id": "a", "text": "Counts characters" },
+        { "id": "b", "text": "Returns length of object" },
+        { "id": "c", "text": "Finds data type" },
+        { "id": "d", "text": "Deletes object" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "len() returns the number of elements in an object.",
+      "hint": "Length of something."
+    },
+    {
+      "id": "p14",
+      "question": "Which keyword is used to import a module?",
+      "options": [
+        { "id": "a", "text": "include" },
+        { "id": "b", "text": "require" },
+        { "id": "c", "text": "import" },
+        { "id": "d", "text": "using" }
+      ],
+      "correctOptionId": "c",
+      "explanation": "Modules are imported using the import keyword.",
+      "hint": "Same as English word."
+    },
+    {
+      "id": "p15",
+      "question": "What is the output of type(10)?",
+      "options": [
+        { "id": "a", "text": "float" },
+        { "id": "b", "text": "int" },
+        { "id": "c", "text": "str" },
+        { "id": "d", "text": "bool" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "10 is an integer.",
+      "hint": "Whole number type."
+    },
+    {
+      "id": "p16",
+      "question": "Which operator is used for floor division?",
+      "options": [
+        { "id": "a", "text": "/" },
+        { "id": "b", "text": "//" },
+        { "id": "c", "text": "%" },
+        { "id": "d", "text": "**" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "Floor division removes decimal values.",
+      "hint": "Two slashes."
+    },
+    {
+      "id": "p17",
+      "question": "Which keyword stops a loop?",
+      "options": [
+        { "id": "a", "text": "stop" },
+        { "id": "b", "text": "end" },
+        { "id": "c", "text": "break" },
+        { "id": "d", "text": "exit" }
+      ],
+      "correctOptionId": "c",
+      "explanation": "break exits the loop immediately.",
+      "hint": "Break the loop."
+    },
+    {
+      "id": "p18",
+      "question": "Which keyword skips the current iteration?",
+      "options": [
+        { "id": "a", "text": "skip" },
+        { "id": "b", "text": "continue" },
+        { "id": "c", "text": "pass" },
+        { "id": "d", "text": "next" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "continue skips to the next loop iteration.",
+      "hint": "Continue looping."
+    },
+    {
+      "id": "p19",
+      "question": "What does pass do?",
+      "options": [
+        { "id": "a", "text": "Stops execution" },
+        { "id": "b", "text": "Skips loop" },
+        { "id": "c", "text": "Acts as placeholder" },
+        { "id": "d", "text": "Raises error" }
+      ],
+      "correctOptionId": "c",
+      "explanation": "pass is used as a placeholder statement.",
+      "hint": "Does nothing."
+    },
+    {
+      "id": "p20",
+      "question": "Which method adds an element to a list?",
+      "options": [
+        { "id": "a", "text": "add()" },
+        { "id": "b", "text": "append()" },
+        { "id": "c", "text": "insert()" },
+        { "id": "d", "text": "Both b and c" }
+      ],
+      "correctOptionId": "d",
+      "explanation": "append() and insert() both add elements.",
+      "hint": "Two correct ways."
+    },
+    {
+      "id": "p21",
+      "question": "Which method removes the last list item?",
+      "options": [
+        { "id": "a", "text": "remove()" },
+        { "id": "b", "text": "delete()" },
+        { "id": "c", "text": "pop()" },
+        { "id": "d", "text": "clear()" }
+      ],
+      "correctOptionId": "c",
+      "explanation": "pop() removes and returns the last item.",
+      "hint": "Pop like stack."
+    },
+    {
+      "id": "p22",
+      "question": "Which data type stores key-value pairs?",
+      "options": [
+        { "id": "a", "text": "list" },
+        { "id": "b", "text": "tuple" },
+        { "id": "c", "text": "set" },
+        { "id": "d", "text": "dictionary" }
+      ],
+      "correctOptionId": "d",
+      "explanation": "Dictionaries store data as key-value pairs.",
+      "hint": "Uses curly braces."
+    },
+    {
+      "id": "p23",
+      "question": "Which keyword creates a class?",
+      "options": [
+        { "id": "a", "text": "object" },
+        { "id": "b", "text": "define" },
+        { "id": "c", "text": "class" },
+        { "id": "d", "text": "struct" }
+      ],
+      "correctOptionId": "c",
+      "explanation": "Classes are created using the class keyword.",
+      "hint": "Same word as concept."
+    },
+    {
+      "id": "p24",
+      "question": "Which function converts input to integer?",
+      "options": [
+        { "id": "a", "text": "str()" },
+        { "id": "b", "text": "float()" },
+        { "id": "c", "text": "bool()" },
+        { "id": "d", "text": "int()" }
+      ],
+      "correctOptionId": "d",
+      "explanation": "int() converts values to integers.",
+      "hint": "Same as data type."
+    },
+    {
+      "id": "p25",
+      "question": "Which statement checks membership?",
+      "options": [
+        { "id": "a", "text": "has" },
+        { "id": "b", "text": "in" },
+        { "id": "c", "text": "contains" },
+        { "id": "d", "text": "exists" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "in checks whether a value exists in a sequence.",
+      "hint": "Used in loops and conditions."
+    }
+  ]
 }

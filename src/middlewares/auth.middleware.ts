@@ -37,3 +37,6 @@ export const protect = async (req: Request, res: Response, next: NextFunction) =
         return next(new AppError('Invalid token', 401));
     }
 };
+
+// Alias for compatibility
+export const authMiddleware = protect;

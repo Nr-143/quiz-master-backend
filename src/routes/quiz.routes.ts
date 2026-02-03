@@ -48,7 +48,7 @@ const unlockHintSchema = z.object({
 // Remove auth requirement for fetching quizzes and categories
 router.get('/', quizController.getQuiz);
 router.get('/categories', quizController.getCategories);
-router.get('/progress', optionalAuth, quizController.getQuizProgress);
+router.get('/progress/:category', protect, quizController.getQuizProgress);
 router.post('/validate-answer', optionalAuth, validate(validateAnswerSchema), quizController.validateAnswer);
 router.post('/submit', optionalAuth, validate(submitSchema), quizController.submitQuiz);
 router.post('/unlock-hint', protect, hintRateLimiter, validate(unlockHintSchema), quizController.unlockHint);
