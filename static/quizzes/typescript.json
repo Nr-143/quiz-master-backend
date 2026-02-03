@@ -1,0 +1,306 @@
+{
+  "category": "TypeScript",
+  "level": "Beginner",
+  "questions": [
+    {
+      "id": "ts1",
+      "question": "What is TypeScript?",
+      "options": [
+        { "id": "a", "text": "A JavaScript framework" },
+        { "id": "b", "text": "A superset of JavaScript" },
+        { "id": "c", "text": "A database language" },
+        { "id": "d", "text": "A CSS preprocessor" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "TypeScript is a superset of JavaScript that adds static typing."
+    },
+    {
+      "id": "ts2",
+      "question": "Who developed TypeScript?",
+      "options": [
+        { "id": "a", "text": "Google" },
+        { "id": "b", "text": "Facebook" },
+        { "id": "c", "text": "Microsoft" },
+        { "id": "d", "text": "Oracle" }
+      ],
+      "correctOptionId": "c",
+      "explanation": "TypeScript was developed by Microsoft."
+    },
+    {
+      "id": "ts3",
+      "question": "Which file extension is used for TypeScript?",
+      "options": [
+        { "id": "a", "text": ".js" },
+        { "id": "b", "text": ".ts" },
+        { "id": "c", "text": ".tsx" },
+        { "id": "d", "text": ".typ" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "TypeScript files use the .ts extension."
+    },
+    {
+      "id": "ts4",
+      "question": "Which command compiles TypeScript to JavaScript?",
+      "options": [
+        { "id": "a", "text": "node compile" },
+        { "id": "b", "text": "tsc" },
+        { "id": "c", "text": "npm start" },
+        { "id": "d", "text": "typescript run" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "The TypeScript compiler is invoked using tsc."
+    },
+    {
+      "id": "ts5",
+      "question": "What is static typing?",
+      "options": [
+        { "id": "a", "text": "Types checked at runtime" },
+        { "id": "b", "text": "Types checked at compile time" },
+        { "id": "c", "text": "Dynamic memory allocation" },
+        { "id": "d", "text": "Automatic type conversion" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "Static typing checks types during compilation."
+    },
+    {
+      "id": "ts6",
+      "question": "How do you define a variable with a type?",
+      "options": [
+        { "id": "a", "text": "let x = number" },
+        { "id": "b", "text": "let x: number" },
+        { "id": "c", "text": "number x" },
+        { "id": "d", "text": "var x -> number" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "TypeScript uses colon syntax for type annotations."
+    },
+    {
+      "id": "ts7",
+      "question": "Which type represents true or false?",
+      "options": [
+        { "id": "a", "text": "string" },
+        { "id": "b", "text": "number" },
+        { "id": "c", "text": "boolean" },
+        { "id": "d", "text": "flag" }
+      ],
+      "correctOptionId": "c",
+      "explanation": "boolean represents true or false."
+    },
+    {
+      "id": "ts8",
+      "question": "What is the type of an array of numbers?",
+      "options": [
+        { "id": "a", "text": "number[]" },
+        { "id": "b", "text": "array<number>" },
+        { "id": "c", "text": "numbers[]" },
+        { "id": "d", "text": "Both a and b" }
+      ],
+      "correctOptionId": "d",
+      "explanation": "Arrays can be typed as number[] or Array<number>."
+    },
+    {
+      "id": "ts9",
+      "question": "Which type allows any value?",
+      "options": [
+        { "id": "a", "text": "unknown" },
+        { "id": "b", "text": "any" },
+        { "id": "c", "text": "object" },
+        { "id": "d", "text": "void" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "any disables type checking."
+    },
+    {
+      "id": "ts10",
+      "question": "Which type is safer than any?",
+      "options": [
+        { "id": "a", "text": "never" },
+        { "id": "b", "text": "object" },
+        { "id": "c", "text": "unknown" },
+        { "id": "d", "text": "void" }
+      ],
+      "correctOptionId": "c",
+      "explanation": "unknown enforces type checking before usage."
+    },
+    {
+      "id": "ts11",
+      "question": "What does void represent?",
+      "options": [
+        { "id": "a", "text": "No value returned" },
+        { "id": "b", "text": "Null value" },
+        { "id": "c", "text": "Undefined only" },
+        { "id": "d", "text": "Any value" }
+      ],
+      "correctOptionId": "a",
+      "explanation": "void indicates no return value."
+    },
+    {
+      "id": "ts12",
+      "question": "What is an interface?",
+      "options": [
+        { "id": "a", "text": "A class" },
+        { "id": "b", "text": "A contract for object structure" },
+        { "id": "c", "text": "A function" },
+        { "id": "d", "text": "A variable" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "Interfaces define object shapes."
+    },
+    {
+      "id": "ts13",
+      "question": "Which keyword defines an interface?",
+      "options": [
+        { "id": "a", "text": "type" },
+        { "id": "b", "text": "struct" },
+        { "id": "c", "text": "interface" },
+        { "id": "d", "text": "class" }
+      ],
+      "correctOptionId": "c",
+      "explanation": "interface keyword defines interfaces."
+    },
+    {
+      "id": "ts14",
+      "question": "What is a union type?",
+      "options": [
+        { "id": "a", "text": "Combines multiple interfaces" },
+        { "id": "b", "text": "Allows multiple possible types" },
+        { "id": "c", "text": "Extends a class" },
+        { "id": "d", "text": "Merges objects" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "Union types allow more than one type using |."
+    },
+    {
+      "id": "ts15",
+      "question": "How do you define a union type?",
+      "options": [
+        { "id": "a", "text": "string || number" },
+        { "id": "b", "text": "string | number" },
+        { "id": "c", "text": "string & number" },
+        { "id": "d", "text": "union<string,number>" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "Union types use the | operator."
+    },
+    {
+      "id": "ts16",
+      "question": "What does never type represent?",
+      "options": [
+        { "id": "a", "text": "Always returns value" },
+        { "id": "b", "text": "Never returns or unreachable code" },
+        { "id": "c", "text": "Undefined value" },
+        { "id": "d", "text": "Any type" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "never represents unreachable code paths."
+    },
+    {
+      "id": "ts17",
+      "question": "Which file configures TypeScript?",
+      "options": [
+        { "id": "a", "text": "package.json" },
+        { "id": "b", "text": "tsconfig.json" },
+        { "id": "c", "text": "config.ts" },
+        { "id": "d", "text": "typescript.json" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "tsconfig.json configures the compiler."
+    },
+    {
+      "id": "ts18",
+      "question": "What does readonly do?",
+      "options": [
+        { "id": "a", "text": "Prevents deletion" },
+        { "id": "b", "text": "Prevents modification" },
+        { "id": "c", "text": "Prevents access" },
+        { "id": "d", "text": "Prevents inheritance" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "readonly prevents reassignment."
+    },
+    {
+      "id": "ts19",
+      "question": "Which keyword defines a type alias?",
+      "options": [
+        { "id": "a", "text": "interface" },
+        { "id": "b", "text": "alias" },
+        { "id": "c", "text": "type" },
+        { "id": "d", "text": "define" }
+      ],
+      "correctOptionId": "c",
+      "explanation": "type keyword defines type aliases."
+    },
+    {
+      "id": "ts20",
+      "question": "What does optional property use?",
+      "options": [
+        { "id": "a", "text": "!" },
+        { "id": "b", "text": "?" },
+        { "id": "c", "text": "*" },
+        { "id": "d", "text": "&" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "Optional properties use ?."
+    },
+    {
+      "id": "ts21",
+      "question": "Which keyword creates a class?",
+      "options": [
+        { "id": "a", "text": "object" },
+        { "id": "b", "text": "prototype" },
+        { "id": "c", "text": "class" },
+        { "id": "d", "text": "constructor" }
+      ],
+      "correctOptionId": "c",
+      "explanation": "class keyword creates classes."
+    },
+    {
+      "id": "ts22",
+      "question": "What does implements do?",
+      "options": [
+        { "id": "a", "text": "Extends class" },
+        { "id": "b", "text": "Implements interface" },
+        { "id": "c", "text": "Imports module" },
+        { "id": "d", "text": "Overrides method" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "implements enforces interface contracts."
+    },
+    {
+      "id": "ts23",
+      "question": "Which keyword inherits a class?",
+      "options": [
+        { "id": "a", "text": "implements" },
+        { "id": "b", "text": "inherits" },
+        { "id": "c", "text": "extends" },
+        { "id": "d", "text": "super" }
+      ],
+      "correctOptionId": "c",
+      "explanation": "extends is used for inheritance."
+    },
+    {
+      "id": "ts24",
+      "question": "TypeScript code runs directly in browser?",
+      "options": [
+        { "id": "a", "text": "Yes" },
+        { "id": "b", "text": "No" },
+        { "id": "c", "text": "Only Chrome" },
+        { "id": "d", "text": "Only Node.js" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "TypeScript must be compiled to JavaScript."
+    },
+    {
+      "id": "ts25",
+      "question": "Main benefit of TypeScript?",
+      "options": [
+        { "id": "a", "text": "Faster execution" },
+        { "id": "b", "text": "Better type safety" },
+        { "id": "c", "text": "Smaller bundle size" },
+        { "id": "d", "text": "Automatic testing" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "TypeScript improves code safety and maintainability."
+    }
+  ]
+}

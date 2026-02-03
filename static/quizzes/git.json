@@ -1,0 +1,306 @@
+{
+  "category": "Git",
+  "level": "Beginner",
+  "questions": [
+    {
+      "id": "git1",
+      "question": "What is Git?",
+      "options": [
+        { "id": "a", "text": "A programming language" },
+        { "id": "b", "text": "A distributed version control system" },
+        { "id": "c", "text": "A database" },
+        { "id": "d", "text": "A cloud provider" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "Git is a distributed version control system used to track code changes."
+    },
+    {
+      "id": "git2",
+      "question": "Who created Git?",
+      "options": [
+        { "id": "a", "text": "Bill Gates" },
+        { "id": "b", "text": "Guido van Rossum" },
+        { "id": "c", "text": "Linus Torvalds" },
+        { "id": "d", "text": "Dennis Ritchie" }
+      ],
+      "correctOptionId": "c",
+      "explanation": "Git was created by Linus Torvalds."
+    },
+    {
+      "id": "git3",
+      "question": "Which command initializes a Git repository?",
+      "options": [
+        { "id": "a", "text": "git start" },
+        { "id": "b", "text": "git init" },
+        { "id": "c", "text": "git create" },
+        { "id": "d", "text": "git new" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "git init initializes a new Git repository."
+    },
+    {
+      "id": "git4",
+      "question": "Which command checks repository status?",
+      "options": [
+        { "id": "a", "text": "git log" },
+        { "id": "b", "text": "git status" },
+        { "id": "c", "text": "git diff" },
+        { "id": "d", "text": "git check" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "git status shows file states."
+    },
+    {
+      "id": "git5",
+      "question": "Which command stages files?",
+      "options": [
+        { "id": "a", "text": "git push" },
+        { "id": "b", "text": "git commit" },
+        { "id": "c", "text": "git add" },
+        { "id": "d", "text": "git stage" }
+      ],
+      "correctOptionId": "c",
+      "explanation": "git add moves files to staging area."
+    },
+    {
+      "id": "git6",
+      "question": "Which command saves changes permanently?",
+      "options": [
+        { "id": "a", "text": "git save" },
+        { "id": "b", "text": "git commit" },
+        { "id": "c", "text": "git push" },
+        { "id": "d", "text": "git store" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "git commit records changes."
+    },
+    {
+      "id": "git7",
+      "question": "What is a commit?",
+      "options": [
+        { "id": "a", "text": "A branch" },
+        { "id": "b", "text": "A snapshot of changes" },
+        { "id": "c", "text": "A merge" },
+        { "id": "d", "text": "A conflict" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "Commits capture project state."
+    },
+    {
+      "id": "git8",
+      "question": "Which command shows commit history?",
+      "options": [
+        { "id": "a", "text": "git history" },
+        { "id": "b", "text": "git log" },
+        { "id": "c", "text": "git show" },
+        { "id": "d", "text": "git commits" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "git log displays commit history."
+    },
+    {
+      "id": "git9",
+      "question": "What is a branch?",
+      "options": [
+        { "id": "a", "text": "A copy of repository" },
+        { "id": "b", "text": "An independent line of development" },
+        { "id": "c", "text": "A remote repo" },
+        { "id": "d", "text": "A tag" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "Branches isolate work streams."
+    },
+    {
+      "id": "git10",
+      "question": "Which command creates a new branch?",
+      "options": [
+        { "id": "a", "text": "git new branch" },
+        { "id": "b", "text": "git branch <name>" },
+        { "id": "c", "text": "git checkout" },
+        { "id": "d", "text": "git fork" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "git branch creates branches."
+    },
+    {
+      "id": "git11",
+      "question": "Which command switches branches?",
+      "options": [
+        { "id": "a", "text": "git move" },
+        { "id": "b", "text": "git checkout" },
+        { "id": "c", "text": "git branch" },
+        { "id": "d", "text": "git change" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "git checkout switches branches."
+    },
+    {
+      "id": "git12",
+      "question": "What is merge in Git?",
+      "options": [
+        { "id": "a", "text": "Deleting branches" },
+        { "id": "b", "text": "Combining branch changes" },
+        { "id": "c", "text": "Cloning repository" },
+        { "id": "d", "text": "Creating tags" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "Merge integrates branch changes."
+    },
+    {
+      "id": "git13",
+      "question": "What causes merge conflicts?",
+      "options": [
+        { "id": "a", "text": "Different files" },
+        { "id": "b", "text": "Same file edited in same lines" },
+        { "id": "c", "text": "Different branches" },
+        { "id": "d", "text": "Large commits" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "Conflicts happen when same lines are changed."
+    },
+    {
+      "id": "git14",
+      "question": "Which command uploads commits to remote?",
+      "options": [
+        { "id": "a", "text": "git upload" },
+        { "id": "b", "text": "git push" },
+        { "id": "c", "text": "git pull" },
+        { "id": "d", "text": "git send" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "git push sends commits to remote."
+    },
+    {
+      "id": "git15",
+      "question": "Which command downloads changes?",
+      "options": [
+        { "id": "a", "text": "git fetch" },
+        { "id": "b", "text": "git pull" },
+        { "id": "c", "text": "Both a and b" },
+        { "id": "d", "text": "git clone" }
+      ],
+      "correctOptionId": "c",
+      "explanation": "fetch and pull retrieve changes."
+    },
+    {
+      "id": "git16",
+      "question": "What is git clone?",
+      "options": [
+        { "id": "a", "text": "Copy of branch" },
+        { "id": "b", "text": "Download repository" },
+        { "id": "c", "text": "Merge repo" },
+        { "id": "d", "text": "Upload repo" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "git clone copies repository locally."
+    },
+    {
+      "id": "git17",
+      "question": "What is a remote repository?",
+      "options": [
+        { "id": "a", "text": "Local folder" },
+        { "id": "b", "text": "Repository hosted online" },
+        { "id": "c", "text": "A branch" },
+        { "id": "d", "text": "A commit" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "Remote repos are hosted on servers."
+    },
+    {
+      "id": "git18",
+      "question": "What is origin?",
+      "options": [
+        { "id": "a", "text": "Main branch" },
+        { "id": "b", "text": "Default remote name" },
+        { "id": "c", "text": "First commit" },
+        { "id": "d", "text": "Repository owner" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "origin is default remote name."
+    },
+    {
+      "id": "git19",
+      "question": "Which command shows differences?",
+      "options": [
+        { "id": "a", "text": "git status" },
+        { "id": "b", "text": "git diff" },
+        { "id": "c", "text": "git log" },
+        { "id": "d", "text": "git changes" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "git diff shows code changes."
+    },
+    {
+      "id": "git20",
+      "question": "What is HEAD?",
+      "options": [
+        { "id": "a", "text": "Last commit reference" },
+        { "id": "b", "text": "Current branch pointer" },
+        { "id": "c", "text": "Remote pointer" },
+        { "id": "d", "text": "Tag reference" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "HEAD points to current branch."
+    },
+    {
+      "id": "git21",
+      "question": "Which command discards local changes?",
+      "options": [
+        { "id": "a", "text": "git reset --hard" },
+        { "id": "b", "text": "git clean" },
+        { "id": "c", "text": "git checkout -- <file>" },
+        { "id": "d", "text": "All of the above" }
+      ],
+      "correctOptionId": "d",
+      "explanation": "All commands can discard changes in different ways."
+    },
+    {
+      "id": "git22",
+      "question": "What is git stash?",
+      "options": [
+        { "id": "a", "text": "Delete changes" },
+        { "id": "b", "text": "Temporarily save changes" },
+        { "id": "c", "text": "Commit changes" },
+        { "id": "d", "text": "Push changes" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "git stash temporarily saves work."
+    },
+    {
+      "id": "git23",
+      "question": "Which command lists branches?",
+      "options": [
+        { "id": "a", "text": "git show branch" },
+        { "id": "b", "text": "git branch" },
+        { "id": "c", "text": "git list" },
+        { "id": "d", "text": "git branches" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "git branch lists branches."
+    },
+    {
+      "id": "git24",
+      "question": "What is rebase?",
+      "options": [
+        { "id": "a", "text": "Merge history linearly" },
+        { "id": "b", "text": "Delete commits" },
+        { "id": "c", "text": "Reset repository" },
+        { "id": "d", "text": "Push changes" }
+      ],
+      "correctOptionId": "a",
+      "explanation": "Rebase creates linear commit history."
+    },
+    {
+      "id": "git25",
+      "question": "Git is best described as?",
+      "options": [
+        { "id": "a", "text": "Centralized VCS" },
+        { "id": "b", "text": "Distributed VCS" },
+        { "id": "c", "text": "Cloud-only tool" },
+        { "id": "d", "text": "IDE feature" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "Git is a distributed version control system."
+    }
+  ]
+}

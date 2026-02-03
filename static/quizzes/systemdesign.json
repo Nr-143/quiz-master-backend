@@ -1,0 +1,306 @@
+{
+  "category": "System Design",
+  "level": "Beginner",
+  "questions": [
+    {
+      "id": "sd1",
+      "question": "What is system design?",
+      "options": [
+        { "id": "a", "text": "Writing code for applications" },
+        { "id": "b", "text": "Designing databases only" },
+        { "id": "c", "text": "Defining architecture of a software system" },
+        { "id": "d", "text": "Creating UI designs" }
+      ],
+      "correctOptionId": "c",
+      "explanation": "System design defines how components interact to build scalable software."
+    },
+    {
+      "id": "sd2",
+      "question": "What does scalability mean?",
+      "options": [
+        { "id": "a", "text": "System speed" },
+        { "id": "b", "text": "Ability to handle growth in users or load" },
+        { "id": "c", "text": "UI responsiveness" },
+        { "id": "d", "text": "Security strength" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "Scalability means handling increased traffic or data."
+    },
+    {
+      "id": "sd3",
+      "question": "What is horizontal scaling?",
+      "options": [
+        { "id": "a", "text": "Adding more CPU to a server" },
+        { "id": "b", "text": "Adding more servers" },
+        { "id": "c", "text": "Increasing RAM only" },
+        { "id": "d", "text": "Optimizing code" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "Horizontal scaling adds more machines."
+    },
+    {
+      "id": "sd4",
+      "question": "What is vertical scaling?",
+      "options": [
+        { "id": "a", "text": "Adding more servers" },
+        { "id": "b", "text": "Upgrading server resources" },
+        { "id": "c", "text": "Adding cache" },
+        { "id": "d", "text": "Using CDN" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "Vertical scaling upgrades CPU/RAM of a single machine."
+    },
+    {
+      "id": "sd5",
+      "question": "What is load balancing?",
+      "options": [
+        { "id": "a", "text": "Storing data efficiently" },
+        { "id": "b", "text": "Distributing traffic across servers" },
+        { "id": "c", "text": "Encrypting requests" },
+        { "id": "d", "text": "Caching responses" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "Load balancers distribute traffic to prevent overload."
+    },
+    {
+      "id": "sd6",
+      "question": "What is a database index?",
+      "options": [
+        { "id": "a", "text": "Backup copy of database" },
+        { "id": "b", "text": "A structure to speed up queries" },
+        { "id": "c", "text": "A table relationship" },
+        { "id": "d", "text": "A query cache" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "Indexes improve read performance."
+    },
+    {
+      "id": "sd7",
+      "question": "What is caching?",
+      "options": [
+        { "id": "a", "text": "Storing data temporarily for fast access" },
+        { "id": "b", "text": "Encrypting data" },
+        { "id": "c", "text": "Compressing data" },
+        { "id": "d", "text": "Deleting old data" }
+      ],
+      "correctOptionId": "a",
+      "explanation": "Caching reduces latency and DB load."
+    },
+    {
+      "id": "sd8",
+      "question": "Which cache is commonly used in backend systems?",
+      "options": [
+        { "id": "a", "text": "Redis" },
+        { "id": "b", "text": "MongoDB" },
+        { "id": "c", "text": "MySQL" },
+        { "id": "d", "text": "ElasticSearch" }
+      ],
+      "correctOptionId": "a",
+      "explanation": "Redis is widely used for in-memory caching."
+    },
+    {
+      "id": "sd9",
+      "question": "What is a CDN?",
+      "options": [
+        { "id": "a", "text": "Content Delivery Network" },
+        { "id": "b", "text": "Central Database Node" },
+        { "id": "c", "text": "Cloud Data Network" },
+        { "id": "d", "text": "Client Data Node" }
+      ],
+      "correctOptionId": "a",
+      "explanation": "CDNs serve content from nearest locations."
+    },
+    {
+      "id": "sd10",
+      "question": "What problem does CDN solve?",
+      "options": [
+        { "id": "a", "text": "Authentication" },
+        { "id": "b", "text": "High latency" },
+        { "id": "c", "text": "Data encryption" },
+        { "id": "d", "text": "Database joins" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "CDN reduces latency by serving content closer to users."
+    },
+    {
+      "id": "sd11",
+      "question": "What is a monolithic architecture?",
+      "options": [
+        { "id": "a", "text": "Single deployable application" },
+        { "id": "b", "text": "Multiple independent services" },
+        { "id": "c", "text": "Serverless design" },
+        { "id": "d", "text": "Event-based system" }
+      ],
+      "correctOptionId": "a",
+      "explanation": "Monoliths bundle all logic in one app."
+    },
+    {
+      "id": "sd12",
+      "question": "What is microservices architecture?",
+      "options": [
+        { "id": "a", "text": "Single large codebase" },
+        { "id": "b", "text": "Small independent services" },
+        { "id": "c", "text": "Frontend-only architecture" },
+        { "id": "d", "text": "Database-only system" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "Microservices split systems into independent services."
+    },
+    {
+      "id": "sd13",
+      "question": "Which protocol is commonly used between microservices?",
+      "options": [
+        { "id": "a", "text": "FTP" },
+        { "id": "b", "text": "HTTP/REST" },
+        { "id": "c", "text": "SMTP" },
+        { "id": "d", "text": "SSH" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "REST over HTTP is commonly used."
+    },
+    {
+      "id": "sd14",
+      "question": "What is a single point of failure?",
+      "options": [
+        { "id": "a", "text": "Slow component" },
+        { "id": "b", "text": "Component whose failure crashes entire system" },
+        { "id": "c", "text": "Backup server" },
+        { "id": "d", "text": "Cache server" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "Single point failures reduce reliability."
+    },
+    {
+      "id": "sd15",
+      "question": "What is high availability?",
+      "options": [
+        { "id": "a", "text": "Fast execution" },
+        { "id": "b", "text": "System uptime and reliability" },
+        { "id": "c", "text": "Security level" },
+        { "id": "d", "text": "Data consistency" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "High availability ensures minimal downtime."
+    },
+    {
+      "id": "sd16",
+      "question": "What is database replication?",
+      "options": [
+        { "id": "a", "text": "Splitting tables" },
+        { "id": "b", "text": "Copying data across servers" },
+        { "id": "c", "text": "Encrypting data" },
+        { "id": "d", "text": "Deleting duplicates" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "Replication improves availability and reads."
+    },
+    {
+      "id": "sd17",
+      "question": "What is sharding?",
+      "options": [
+        { "id": "a", "text": "Encrypting data" },
+        { "id": "b", "text": "Splitting database into parts" },
+        { "id": "c", "text": "Caching data" },
+        { "id": "d", "text": "Backing up data" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "Sharding distributes data across nodes."
+    },
+    {
+      "id": "sd18",
+      "question": "Which system is best for asynchronous tasks?",
+      "options": [
+        { "id": "a", "text": "Queue" },
+        { "id": "b", "text": "Cache" },
+        { "id": "c", "text": "CDN" },
+        { "id": "d", "text": "Load balancer" }
+      ],
+      "correctOptionId": "a",
+      "explanation": "Queues handle background processing."
+    },
+    {
+      "id": "sd19",
+      "question": "Example of message queue?",
+      "options": [
+        { "id": "a", "text": "Redis" },
+        { "id": "b", "text": "RabbitMQ" },
+        { "id": "c", "text": "MySQL" },
+        { "id": "d", "text": "Nginx" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "RabbitMQ is a popular message broker."
+    },
+    {
+      "id": "sd20",
+      "question": "What is eventual consistency?",
+      "options": [
+        { "id": "a", "text": "Immediate data sync" },
+        { "id": "b", "text": "Data becomes consistent over time" },
+        { "id": "c", "text": "Always consistent data" },
+        { "id": "d", "text": "Inconsistent system" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "Used in distributed systems."
+    },
+    {
+      "id": "sd21",
+      "question": "CAP theorem stands for?",
+      "options": [
+        { "id": "a", "text": "Consistency, Availability, Partition tolerance" },
+        { "id": "b", "text": "Cache, API, Performance" },
+        { "id": "c", "text": "Compute, Access, Process" },
+        { "id": "d", "text": "Control, Access, Permission" }
+      ],
+      "correctOptionId": "a",
+      "explanation": "CAP theorem defines distributed system trade-offs."
+    },
+    {
+      "id": "sd22",
+      "question": "What is API?",
+      "options": [
+        { "id": "a", "text": "Application Programming Interface" },
+        { "id": "b", "text": "Advanced Program Index" },
+        { "id": "c", "text": "Application Process Integration" },
+        { "id": "d", "text": "Access Program Interface" }
+      ],
+      "correctOptionId": "a",
+      "explanation": "APIs enable communication between systems."
+    },
+    {
+      "id": "sd23",
+      "question": "Why is authentication important?",
+      "options": [
+        { "id": "a", "text": "To increase speed" },
+        { "id": "b", "text": "To identify users securely" },
+        { "id": "c", "text": "To cache responses" },
+        { "id": "d", "text": "To balance load" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "Authentication verifies user identity."
+    },
+    {
+      "id": "sd24",
+      "question": "What is authorization?",
+      "options": [
+        { "id": "a", "text": "User login" },
+        { "id": "b", "text": "Permission control" },
+        { "id": "c", "text": "Token generation" },
+        { "id": "d", "text": "Password hashing" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "Authorization defines access rights."
+    },
+    {
+      "id": "sd25",
+      "question": "First step in system design interview?",
+      "options": [
+        { "id": "a", "text": "Write code" },
+        { "id": "b", "text": "Choose database" },
+        { "id": "c", "text": "Clarify requirements" },
+        { "id": "d", "text": "Draw UI" }
+      ],
+      "correctOptionId": "c",
+      "explanation": "Clarifying requirements is critical."
+    }
+  ]
+}

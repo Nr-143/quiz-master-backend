@@ -1,0 +1,306 @@
+{
+  "category": "DevOps",
+  "level": "Beginner",
+  "questions": [
+    {
+      "id": "dev1",
+      "question": "What is DevOps?",
+      "options": [
+        { "id": "a", "text": "A programming language" },
+        { "id": "b", "text": "A combination of Development and Operations" },
+        { "id": "c", "text": "A cloud provider" },
+        { "id": "d", "text": "A testing framework" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "DevOps combines development and operations to improve delivery speed."
+    },
+    {
+      "id": "dev2",
+      "question": "Main goal of DevOps?",
+      "options": [
+        { "id": "a", "text": "Reduce code quality" },
+        { "id": "b", "text": "Faster and reliable software delivery" },
+        { "id": "c", "text": "Replace developers" },
+        { "id": "d", "text": "Only automation" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "DevOps focuses on speed, reliability, and collaboration."
+    },
+    {
+      "id": "dev3",
+      "question": "Which practice is core to DevOps?",
+      "options": [
+        { "id": "a", "text": "Manual deployment" },
+        { "id": "b", "text": "Continuous Integration" },
+        { "id": "c", "text": "Waterfall model" },
+        { "id": "d", "text": "Standalone testing" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "CI ensures frequent code integration."
+    },
+    {
+      "id": "dev4",
+      "question": "What is CI/CD?",
+      "options": [
+        { "id": "a", "text": "Code Inspection & Code Deployment" },
+        { "id": "b", "text": "Continuous Integration & Continuous Deployment" },
+        { "id": "c", "text": "Central Integration & Deployment" },
+        { "id": "d", "text": "Continuous Improvement Cycle" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "CI/CD automates build, test, and deployment."
+    },
+    {
+      "id": "dev5",
+      "question": "Which tool is used for version control?",
+      "options": [
+        { "id": "a", "text": "Docker" },
+        { "id": "b", "text": "Git" },
+        { "id": "c", "text": "Jenkins" },
+        { "id": "d", "text": "Kubernetes" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "Git is used for source code version control."
+    },
+    {
+      "id": "dev6",
+      "question": "What is Jenkins?",
+      "options": [
+        { "id": "a", "text": "A container tool" },
+        { "id": "b", "text": "A CI/CD automation server" },
+        { "id": "c", "text": "A cloud provider" },
+        { "id": "d", "text": "A database" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "Jenkins automates builds and deployments."
+    },
+    {
+      "id": "dev7",
+      "question": "What is Docker?",
+      "options": [
+        { "id": "a", "text": "A VM" },
+        { "id": "b", "text": "A containerization platform" },
+        { "id": "c", "text": "An OS" },
+        { "id": "d", "text": "A monitoring tool" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "Docker packages applications into containers."
+    },
+    {
+      "id": "dev8",
+      "question": "Main benefit of containers?",
+      "options": [
+        { "id": "a", "text": "Larger size" },
+        { "id": "b", "text": "Consistency across environments" },
+        { "id": "c", "text": "Slower startup" },
+        { "id": "d", "text": "Manual scaling" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "Containers ensure environment consistency."
+    },
+    {
+      "id": "dev9",
+      "question": "Which tool orchestrates containers?",
+      "options": [
+        { "id": "a", "text": "Docker" },
+        { "id": "b", "text": "Kubernetes" },
+        { "id": "c", "text": "Jenkins" },
+        { "id": "d", "text": "GitHub" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "Kubernetes manages container orchestration."
+    },
+    {
+      "id": "dev10",
+      "question": "What is Kubernetes used for?",
+      "options": [
+        { "id": "a", "text": "Version control" },
+        { "id": "b", "text": "Container orchestration" },
+        { "id": "c", "text": "Code testing" },
+        { "id": "d", "text": "Monitoring only" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "Kubernetes automates deployment and scaling."
+    },
+    {
+      "id": "dev11",
+      "question": "What is Infrastructure as Code?",
+      "options": [
+        { "id": "a", "text": "Manual server setup" },
+        { "id": "b", "text": "Managing infra using code" },
+        { "id": "c", "text": "Hardware configuration" },
+        { "id": "d", "text": "Frontend deployment" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "IaC manages infrastructure via code."
+    },
+    {
+      "id": "dev12",
+      "question": "Popular IaC tool?",
+      "options": [
+        { "id": "a", "text": "Terraform" },
+        { "id": "b", "text": "Jenkins" },
+        { "id": "c", "text": "Docker" },
+        { "id": "d", "text": "Git" }
+      ],
+      "correctOptionId": "a",
+      "explanation": "Terraform is widely used for IaC."
+    },
+    {
+      "id": "dev13",
+      "question": "What is cloud computing?",
+      "options": [
+        { "id": "a", "text": "Local server hosting" },
+        { "id": "b", "text": "On-demand computing resources" },
+        { "id": "c", "text": "Desktop virtualization" },
+        { "id": "d", "text": "Static hosting" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "Cloud provides scalable on-demand resources."
+    },
+    {
+      "id": "dev14",
+      "question": "Which is NOT a cloud service model?",
+      "options": [
+        { "id": "a", "text": "IaaS" },
+        { "id": "b", "text": "PaaS" },
+        { "id": "c", "text": "SaaS" },
+        { "id": "d", "text": "DaaS" }
+      ],
+      "correctOptionId": "d",
+      "explanation": "DaaS is not a core cloud model."
+    },
+    {
+      "id": "dev15",
+      "question": "Which cloud provider is popular?",
+      "options": [
+        { "id": "a", "text": "AWS" },
+        { "id": "b", "text": "Azure" },
+        { "id": "c", "text": "GCP" },
+        { "id": "d", "text": "All of the above" }
+      ],
+      "correctOptionId": "d",
+      "explanation": "AWS, Azure, and GCP are major providers."
+    },
+    {
+      "id": "dev16",
+      "question": "What is monitoring?",
+      "options": [
+        { "id": "a", "text": "Writing logs" },
+        { "id": "b", "text": "Tracking system health and performance" },
+        { "id": "c", "text": "Deploying code" },
+        { "id": "d", "text": "Scaling servers" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "Monitoring ensures system reliability."
+    },
+    {
+      "id": "dev17",
+      "question": "Which tool is used for monitoring?",
+      "options": [
+        { "id": "a", "text": "Prometheus" },
+        { "id": "b", "text": "Git" },
+        { "id": "c", "text": "Docker" },
+        { "id": "d", "text": "Terraform" }
+      ],
+      "correctOptionId": "a",
+      "explanation": "Prometheus is used for metrics monitoring."
+    },
+    {
+      "id": "dev18",
+      "question": "What is logging?",
+      "options": [
+        { "id": "a", "text": "Tracking user sessions" },
+        { "id": "b", "text": "Recording system events" },
+        { "id": "c", "text": "Encrypting data" },
+        { "id": "d", "text": "Caching responses" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "Logs help debug and audit systems."
+    },
+    {
+      "id": "dev19",
+      "question": "What is blue-green deployment?",
+      "options": [
+        { "id": "a", "text": "Two databases" },
+        { "id": "b", "text": "Zero-downtime deployment strategy" },
+        { "id": "c", "text": "Two servers only" },
+        { "id": "d", "text": "Rollback technique" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "Blue-green avoids downtime during deploys."
+    },
+    {
+      "id": "dev20",
+      "question": "What is rollback?",
+      "options": [
+        { "id": "a", "text": "Forward deployment" },
+        { "id": "b", "text": "Reverting to previous version" },
+        { "id": "c", "text": "Scaling application" },
+        { "id": "d", "text": "Restarting server" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "Rollback restores a stable version."
+    },
+    {
+      "id": "dev21",
+      "question": "What is SLA?",
+      "options": [
+        { "id": "a", "text": "Service Level Agreement" },
+        { "id": "b", "text": "System Load Average" },
+        { "id": "c", "text": "Secure Login Access" },
+        { "id": "d", "text": "Service Log Analyzer" }
+      ],
+      "correctOptionId": "a",
+      "explanation": "SLA defines service expectations."
+    },
+    {
+      "id": "dev22",
+      "question": "What is zero-downtime deployment?",
+      "options": [
+        { "id": "a", "text": "Stopping server during deploy" },
+        { "id": "b", "text": "Deploy without service interruption" },
+        { "id": "c", "text": "Deploy at night only" },
+        { "id": "d", "text": "Manual deployment" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "Ensures continuous availability."
+    },
+    {
+      "id": "dev23",
+      "question": "What is autoscaling?",
+      "options": [
+        { "id": "a", "text": "Manual scaling" },
+        { "id": "b", "text": "Automatic resource scaling based on load" },
+        { "id": "c", "text": "Static scaling" },
+        { "id": "d", "text": "Database scaling only" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "Autoscaling adjusts resources automatically."
+    },
+    {
+      "id": "dev24",
+      "question": "Which tool manages secrets?",
+      "options": [
+        { "id": "a", "text": "Vault" },
+        { "id": "b", "text": "Git" },
+        { "id": "c", "text": "Docker" },
+        { "id": "d", "text": "Jenkins" }
+      ],
+      "correctOptionId": "a",
+      "explanation": "Vault securely manages secrets."
+    },
+    {
+      "id": "dev25",
+      "question": "DevOps culture emphasizes?",
+      "options": [
+        { "id": "a", "text": "Isolation" },
+        { "id": "b", "text": "Collaboration and automation" },
+        { "id": "c", "text": "Manual processes" },
+        { "id": "d", "text": "Delayed releases" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "DevOps promotes collaboration and automation."
+    }
+  ]
+}

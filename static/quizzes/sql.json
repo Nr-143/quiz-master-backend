@@ -1,0 +1,306 @@
+{
+  "category": "SQL",
+  "level": "Beginner",
+  "questions": [
+    {
+      "id": "s1",
+      "question": "What does SQL stand for?",
+      "options": [
+        { "id": "a", "text": "Structured Query Language" },
+        { "id": "b", "text": "Simple Query Language" },
+        { "id": "c", "text": "Standard Query List" },
+        { "id": "d", "text": "Sequential Query Language" }
+      ],
+      "correctOptionId": "a",
+      "explanation": "SQL stands for Structured Query Language."
+    },
+    {
+      "id": "s2",
+      "question": "Which SQL statement is used to retrieve data?",
+      "options": [
+        { "id": "a", "text": "GET" },
+        { "id": "b", "text": "FETCH" },
+        { "id": "c", "text": "SELECT" },
+        { "id": "d", "text": "EXTRACT" }
+      ],
+      "correctOptionId": "c",
+      "explanation": "SELECT is used to fetch data from a database."
+    },
+    {
+      "id": "s3",
+      "question": "Which clause is used to filter records?",
+      "options": [
+        { "id": "a", "text": "GROUP BY" },
+        { "id": "b", "text": "ORDER BY" },
+        { "id": "c", "text": "WHERE" },
+        { "id": "d", "text": "HAVING" }
+      ],
+      "correctOptionId": "c",
+      "explanation": "WHERE filters rows based on conditions."
+    },
+    {
+      "id": "s4",
+      "question": "Which keyword sorts the result set?",
+      "options": [
+        { "id": "a", "text": "SORT BY" },
+        { "id": "b", "text": "ORDER BY" },
+        { "id": "c", "text": "GROUP BY" },
+        { "id": "d", "text": "FILTER BY" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "ORDER BY sorts the result set."
+    },
+    {
+      "id": "s5",
+      "question": "Which SQL statement is used to insert data?",
+      "options": [
+        { "id": "a", "text": "ADD" },
+        { "id": "b", "text": "INSERT INTO" },
+        { "id": "c", "text": "UPDATE" },
+        { "id": "d", "text": "CREATE" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "INSERT INTO adds new records to a table."
+    },
+    {
+      "id": "s6",
+      "question": "Which statement updates existing data?",
+      "options": [
+        { "id": "a", "text": "MODIFY" },
+        { "id": "b", "text": "CHANGE" },
+        { "id": "c", "text": "UPDATE" },
+        { "id": "d", "text": "SET" }
+      ],
+      "correctOptionId": "c",
+      "explanation": "UPDATE modifies existing records."
+    },
+    {
+      "id": "s7",
+      "question": "Which statement deletes records from a table?",
+      "options": [
+        { "id": "a", "text": "REMOVE" },
+        { "id": "b", "text": "DROP" },
+        { "id": "c", "text": "DELETE" },
+        { "id": "d", "text": "TRUNCATE" }
+      ],
+      "correctOptionId": "c",
+      "explanation": "DELETE removes specific records."
+    },
+    {
+      "id": "s8",
+      "question": "Which SQL function counts rows?",
+      "options": [
+        { "id": "a", "text": "SUM()" },
+        { "id": "b", "text": "TOTAL()" },
+        { "id": "c", "text": "COUNT()" },
+        { "id": "d", "text": "NUMBER()" }
+      ],
+      "correctOptionId": "c",
+      "explanation": "COUNT() returns the number of rows."
+    },
+    {
+      "id": "s9",
+      "question": "Which keyword groups rows?",
+      "options": [
+        { "id": "a", "text": "GROUP BY" },
+        { "id": "b", "text": "ORDER BY" },
+        { "id": "c", "text": "CLUSTER BY" },
+        { "id": "d", "text": "SORT BY" }
+      ],
+      "correctOptionId": "a",
+      "explanation": "GROUP BY groups rows with same values."
+    },
+    {
+      "id": "s10",
+      "question": "Which clause filters groups?",
+      "options": [
+        { "id": "a", "text": "WHERE" },
+        { "id": "b", "text": "HAVING" },
+        { "id": "c", "text": "FILTER" },
+        { "id": "d", "text": "LIMIT" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "HAVING filters grouped data."
+    },
+    {
+      "id": "s11",
+      "question": "Which operator checks a range?",
+      "options": [
+        { "id": "a", "text": "IN" },
+        { "id": "b", "text": "BETWEEN" },
+        { "id": "c", "text": "LIKE" },
+        { "id": "d", "text": "RANGE" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "BETWEEN checks a range of values."
+    },
+    {
+      "id": "s12",
+      "question": "Which operator matches a pattern?",
+      "options": [
+        { "id": "a", "text": "=" },
+        { "id": "b", "text": "LIKE" },
+        { "id": "c", "text": "MATCH" },
+        { "id": "d", "text": "PATTERN" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "LIKE is used for pattern matching."
+    },
+    {
+      "id": "s13",
+      "question": "Which keyword limits result rows?",
+      "options": [
+        { "id": "a", "text": "LIMIT" },
+        { "id": "b", "text": "TOP" },
+        { "id": "c", "text": "ROWNUM" },
+        { "id": "d", "text": "All of the above" }
+      ],
+      "correctOptionId": "d",
+      "explanation": "Different databases use LIMIT, TOP, or ROWNUM."
+    },
+    {
+      "id": "s14",
+      "question": "What is a primary key?",
+      "options": [
+        { "id": "a", "text": "A foreign column" },
+        { "id": "b", "text": "A unique identifier" },
+        { "id": "c", "text": "A duplicate value" },
+        { "id": "d", "text": "An index only" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "Primary key uniquely identifies each row."
+    },
+    {
+      "id": "s15",
+      "question": "What is a foreign key?",
+      "options": [
+        { "id": "a", "text": "A primary key" },
+        { "id": "b", "text": "A key from another table" },
+        { "id": "c", "text": "A unique index" },
+        { "id": "d", "text": "A constraint only" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "Foreign key links two tables."
+    },
+    {
+      "id": "s16",
+      "question": "Which statement creates a table?",
+      "options": [
+        { "id": "a", "text": "ADD TABLE" },
+        { "id": "b", "text": "CREATE TABLE" },
+        { "id": "c", "text": "NEW TABLE" },
+        { "id": "d", "text": "MAKE TABLE" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "CREATE TABLE creates a new table."
+    },
+    {
+      "id": "s17",
+      "question": "Which statement removes a table?",
+      "options": [
+        { "id": "a", "text": "DELETE TABLE" },
+        { "id": "b", "text": "REMOVE TABLE" },
+        { "id": "c", "text": "DROP TABLE" },
+        { "id": "d", "text": "CLEAR TABLE" }
+      ],
+      "correctOptionId": "c",
+      "explanation": "DROP TABLE deletes a table permanently."
+    },
+    {
+      "id": "s18",
+      "question": "Which join returns matching rows?",
+      "options": [
+        { "id": "a", "text": "LEFT JOIN" },
+        { "id": "b", "text": "RIGHT JOIN" },
+        { "id": "c", "text": "INNER JOIN" },
+        { "id": "d", "text": "FULL JOIN" }
+      ],
+      "correctOptionId": "c",
+      "explanation": "INNER JOIN returns matching rows from both tables."
+    },
+    {
+      "id": "s19",
+      "question": "Which join returns all rows from left table?",
+      "options": [
+        { "id": "a", "text": "INNER JOIN" },
+        { "id": "b", "text": "RIGHT JOIN" },
+        { "id": "c", "text": "LEFT JOIN" },
+        { "id": "d", "text": "FULL JOIN" }
+      ],
+      "correctOptionId": "c",
+      "explanation": "LEFT JOIN returns all rows from left table."
+    },
+    {
+      "id": "s20",
+      "question": "Which constraint prevents NULL values?",
+      "options": [
+        { "id": "a", "text": "UNIQUE" },
+        { "id": "b", "text": "CHECK" },
+        { "id": "c", "text": "NOT NULL" },
+        { "id": "d", "text": "DEFAULT" }
+      ],
+      "correctOptionId": "c",
+      "explanation": "NOT NULL prevents NULL values."
+    },
+    {
+      "id": "s21",
+      "question": "Which keyword is used to rename a table?",
+      "options": [
+        { "id": "a", "text": "RENAME" },
+        { "id": "b", "text": "ALTER TABLE" },
+        { "id": "c", "text": "CHANGE TABLE" },
+        { "id": "d", "text": "MODIFY TABLE" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "ALTER TABLE is used to rename tables."
+    },
+    {
+      "id": "s22",
+      "question": "Which statement removes all rows but keeps structure?",
+      "options": [
+        { "id": "a", "text": "DELETE" },
+        { "id": "b", "text": "DROP" },
+        { "id": "c", "text": "TRUNCATE" },
+        { "id": "d", "text": "REMOVE" }
+      ],
+      "correctOptionId": "c",
+      "explanation": "TRUNCATE removes all rows but keeps table."
+    },
+    {
+      "id": "s23",
+      "question": "Which keyword is used for aliases?",
+      "options": [
+        { "id": "a", "text": "AS" },
+        { "id": "b", "text": "ALIAS" },
+        { "id": "c", "text": "RENAME" },
+        { "id": "d", "text": "WITH" }
+      ],
+      "correctOptionId": "a",
+      "explanation": "AS gives a temporary name."
+    },
+    {
+      "id": "s24",
+      "question": "Which SQL command starts a transaction?",
+      "options": [
+        { "id": "a", "text": "BEGIN" },
+        { "id": "b", "text": "START" },
+        { "id": "c", "text": "OPEN" },
+        { "id": "d", "text": "TRANSACT" }
+      ],
+      "correctOptionId": "a",
+      "explanation": "BEGIN starts a transaction."
+    },
+    {
+      "id": "s25",
+      "question": "Which command saves transaction changes?",
+      "options": [
+        { "id": "a", "text": "SAVE" },
+        { "id": "b", "text": "COMMIT" },
+        { "id": "c", "text": "END" },
+        { "id": "d", "text": "APPLY" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "COMMIT saves transaction changes permanently."
+    }
+  ]
+}

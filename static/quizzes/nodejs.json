@@ -1,0 +1,309 @@
+{
+  "category": "Node.js",
+  "level": "Beginner",
+  "questions": [
+    {
+      "id": "n1",
+      "question": "What is Node.js?",
+      "options": [
+        { "id": "a", "text": "A JavaScript framework" },
+        { "id": "b", "text": "A JavaScript runtime built on Chrome V8" },
+        { "id": "c", "text": "A database" },
+        { "id": "d", "text": "A browser" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "Node.js is a runtime environment that allows JavaScript to run outside the browser."
+    },
+    {
+      "id": "n2",
+      "question": "Which engine powers Node.js?",
+      "options": [
+        { "id": "a", "text": "SpiderMonkey" },
+        { "id": "b", "text": "Chakra" },
+        { "id": "c", "text": "V8" },
+        { "id": "d", "text": "Java VM" }
+      ],
+      "correctOptionId": "c",
+      "explanation": "Node.js uses Google’s V8 JavaScript engine."
+    },
+    {
+      "id": "n3",
+      "question": "Which command initializes a Node.js project?",
+      "options": [
+        { "id": "a", "text": "node start" },
+        { "id": "b", "text": "npm init" },
+        { "id": "c", "text": "npm install" },
+        { "id": "d", "text": "node init" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "npm init creates a package.json file."
+    },
+    {
+      "id": "n4",
+      "question": "Which file manages project dependencies?",
+      "options": [
+        { "id": "a", "text": "index.js" },
+        { "id": "b", "text": "server.js" },
+        { "id": "c", "text": "package.json" },
+        { "id": "d", "text": "config.js" }
+      ],
+      "correctOptionId": "c",
+      "explanation": "package.json lists dependencies and scripts."
+    },
+    {
+      "id": "n5",
+      "question": "Which keyword is used to import a module (CommonJS)?",
+      "options": [
+        { "id": "a", "text": "import" },
+        { "id": "b", "text": "include" },
+        { "id": "c", "text": "require" },
+        { "id": "d", "text": "load" }
+      ],
+      "correctOptionId": "c",
+      "explanation": "require() is used to import modules in CommonJS."
+    },
+    {
+      "id": "n6",
+      "question": "Which object is used to create a server in Node.js?",
+      "options": [
+        { "id": "a", "text": "http" },
+        { "id": "b", "text": "fs" },
+        { "id": "c", "text": "url" },
+        { "id": "d", "text": "path" }
+      ],
+      "correctOptionId": "a",
+      "explanation": "The http module is used to create servers."
+    },
+    {
+      "id": "n7",
+      "question": "Node.js is ________ by default.",
+      "options": [
+        { "id": "a", "text": "Multi-threaded" },
+        { "id": "b", "text": "Single-threaded" },
+        { "id": "c", "text": "Synchronous" },
+        { "id": "d", "text": "Blocking" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "Node.js uses a single-threaded event loop."
+    },
+    {
+      "id": "n8",
+      "question": "Which module is used to handle files?",
+      "options": [
+        { "id": "a", "text": "fs" },
+        { "id": "b", "text": "http" },
+        { "id": "c", "text": "net" },
+        { "id": "d", "text": "os" }
+      ],
+      "correctOptionId": "a",
+      "explanation": "The fs module handles file operations."
+    },
+    {
+      "id": "n9",
+      "question": "What does npm stand for?",
+      "options": [
+        { "id": "a", "text": "Node Package Manager" },
+        { "id": "b", "text": "New Package Module" },
+        { "id": "c", "text": "Node Program Manager" },
+        { "id": "d", "text": "Network Package Manager" }
+      ],
+      "correctOptionId": "a",
+      "explanation": "npm stands for Node Package Manager."
+    },
+    {
+      "id": "n10",
+      "question": "Which statement is true about Node.js?",
+      "options": [
+        { "id": "a", "text": "It blocks I/O operations" },
+        { "id": "b", "text": "It uses non-blocking I/O" },
+        { "id": "c", "text": "It is multi-threaded only" },
+        { "id": "d", "text": "It runs only in browsers" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "Node.js uses non-blocking, asynchronous I/O."
+    },
+    {
+      "id": "n11",
+      "question": "Which function sends a response in HTTP server?",
+      "options": [
+        { "id": "a", "text": "res.write()" },
+        { "id": "b", "text": "res.send()" },
+        { "id": "c", "text": "res.end()" },
+        { "id": "d", "text": "All of the above" }
+      ],
+      "correctOptionId": "d",
+      "explanation": "All these methods can send data in different ways."
+    },
+    {
+      "id": "n12",
+      "question": "Which framework is most popular for Node.js?",
+      "options": [
+        { "id": "a", "text": "Django" },
+        { "id": "b", "text": "Laravel" },
+        { "id": "c", "text": "Express.js" },
+        { "id": "d", "text": "Spring" }
+      ],
+      "correctOptionId": "c",
+      "explanation": "Express.js is the most widely used Node.js framework."
+    },
+    {
+      "id": "n13",
+      "question": "Which method handles GET requests in Express?",
+      "options": [
+        { "id": "a", "text": "app.post()" },
+        { "id": "b", "text": "app.get()" },
+        { "id": "c", "text": "app.put()" },
+        { "id": "d", "text": "app.delete()" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "app.get() handles GET requests."
+    },
+    {
+      "id": "n14",
+      "question": "What is middleware in Express?",
+      "options": [
+        { "id": "a", "text": "A database" },
+        {
+          "id": "b",
+          "text": "A function that runs between request and response"
+        },
+        { "id": "c", "text": "A router" },
+        { "id": "d", "text": "A template engine" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "Middleware functions process requests before responses."
+    },
+    {
+      "id": "n15",
+      "question": "Which object contains request data?",
+      "options": [
+        { "id": "a", "text": "req" },
+        { "id": "b", "text": "res" },
+        { "id": "c", "text": "app" },
+        { "id": "d", "text": "next" }
+      ],
+      "correctOptionId": "a",
+      "explanation": "req contains request-related data."
+    },
+    {
+      "id": "n16",
+      "question": "Which object is used to send response?",
+      "options": [
+        { "id": "a", "text": "req" },
+        { "id": "b", "text": "res" },
+        { "id": "c", "text": "app" },
+        { "id": "d", "text": "next" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "res is used to send responses."
+    },
+    {
+      "id": "n17",
+      "question": "Which module handles environment variables?",
+      "options": [
+        { "id": "a", "text": "config" },
+        { "id": "b", "text": "env" },
+        { "id": "c", "text": "dotenv" },
+        { "id": "d", "text": "process" }
+      ],
+      "correctOptionId": "c",
+      "explanation": "dotenv loads environment variables from .env file."
+    },
+    {
+      "id": "n18",
+      "question": "What does process.exit() do?",
+      "options": [
+        { "id": "a", "text": "Restarts server" },
+        { "id": "b", "text": "Stops Node.js process" },
+        { "id": "c", "text": "Pauses execution" },
+        { "id": "d", "text": "Clears memory" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "process.exit() terminates the Node.js process."
+    },
+    {
+      "id": "n19",
+      "question": "Which tool restarts server on file changes?",
+      "options": [
+        { "id": "a", "text": "npm" },
+        { "id": "b", "text": "node" },
+        { "id": "c", "text": "nodemon" },
+        { "id": "d", "text": "pm2" }
+      ],
+      "correctOptionId": "c",
+      "explanation": "nodemon automatically restarts the server on changes."
+    },
+    {
+      "id": "n20",
+      "question": "Which method parses JSON body in Express?",
+      "options": [
+        { "id": "a", "text": "express.json()" },
+        { "id": "b", "text": "bodyParser()" },
+        { "id": "c", "text": "jsonParser()" },
+        { "id": "d", "text": "parseJSON()" }
+      ],
+      "correctOptionId": "a",
+      "explanation": "express.json() parses incoming JSON requests."
+    },
+    {
+      "id": "n21",
+      "question": "What is event loop?",
+      "options": [
+        { "id": "a", "text": "A loop in code" },
+        { "id": "b", "text": "A mechanism to handle async operations" },
+        { "id": "c", "text": "A thread manager" },
+        { "id": "d", "text": "A scheduler" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "The event loop handles asynchronous callbacks."
+    },
+    {
+      "id": "n22",
+      "question": "Which HTTP status code means success?",
+      "options": [
+        { "id": "a", "text": "200" },
+        { "id": "b", "text": "301" },
+        { "id": "c", "text": "404" },
+        { "id": "d", "text": "500" }
+      ],
+      "correctOptionId": "a",
+      "explanation": "200 indicates a successful request."
+    },
+    {
+      "id": "n23",
+      "question": "Which database is commonly used with Node.js?",
+      "options": [
+        { "id": "a", "text": "MongoDB" },
+        { "id": "b", "text": "Oracle only" },
+        { "id": "c", "text": "MS Access" },
+        { "id": "d", "text": "SQLite only" }
+      ],
+      "correctOptionId": "a",
+      "explanation": "MongoDB is commonly used with Node.js."
+    },
+    {
+      "id": "n24",
+      "question": "Which method exports a module?",
+      "options": [
+        { "id": "a", "text": "export default" },
+        { "id": "b", "text": "module.exports" },
+        { "id": "c", "text": "exports.module" },
+        { "id": "d", "text": "require.exports" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "module.exports is used to export modules in CommonJS."
+    },
+    {
+      "id": "n25",
+      "question": "Node.js is best suited for?",
+      "options": [
+        { "id": "a", "text": "CPU-intensive tasks" },
+        { "id": "b", "text": "I/O-intensive applications" },
+        { "id": "c", "text": "Desktop apps only" },
+        { "id": "d", "text": "Game engines" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "Node.js excels at I/O-heavy, real-time applications."
+    }
+  ]
+}

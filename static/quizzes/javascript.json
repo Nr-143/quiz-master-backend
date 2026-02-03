@@ -1,0 +1,306 @@
+{
+  "category": "JavaScript",
+  "level": "Beginner",
+  "questions": [
+    {
+      "id": "js1",
+      "question": "What is JavaScript?",
+      "options": [
+        { "id": "a", "text": "A database language" },
+        { "id": "b", "text": "A scripting language for web pages" },
+        { "id": "c", "text": "A CSS framework" },
+        { "id": "d", "text": "A backend server" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "JavaScript is a scripting language used to make web pages interactive."
+    },
+    {
+      "id": "js2",
+      "question": "Which keyword is used to declare a variable?",
+      "options": [
+        { "id": "a", "text": "var" },
+        { "id": "b", "text": "let" },
+        { "id": "c", "text": "const" },
+        { "id": "d", "text": "All of the above" }
+      ],
+      "correctOptionId": "d",
+      "explanation": "Variables can be declared using var, let, or const."
+    },
+    {
+      "id": "js3",
+      "question": "Which symbol is used for single-line comments?",
+      "options": [
+        { "id": "a", "text": "<!-- -->" },
+        { "id": "b", "text": "/* */" },
+        { "id": "c", "text": "//" },
+        { "id": "d", "text": "#" }
+      ],
+      "correctOptionId": "c",
+      "explanation": "Single-line comments in JavaScript use //."
+    },
+    {
+      "id": "js4",
+      "question": "Which data type represents true or false?",
+      "options": [
+        { "id": "a", "text": "String" },
+        { "id": "b", "text": "Number" },
+        { "id": "c", "text": "Boolean" },
+        { "id": "d", "text": "Object" }
+      ],
+      "correctOptionId": "c",
+      "explanation": "Boolean represents true or false values."
+    },
+    {
+      "id": "js5",
+      "question": "What is the correct way to write an array?",
+      "options": [
+        { "id": "a", "text": "var a = (1,2,3)" },
+        { "id": "b", "text": "var a = [1,2,3]" },
+        { "id": "c", "text": "var a = {1,2,3}" },
+        { "id": "d", "text": "var a = <1,2,3>" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "Arrays in JavaScript use square brackets."
+    },
+    {
+      "id": "js6",
+      "question": "Which operator checks value and type?",
+      "options": [
+        { "id": "a", "text": "==" },
+        { "id": "b", "text": "=" },
+        { "id": "c", "text": "===" },
+        { "id": "d", "text": "!=" }
+      ],
+      "correctOptionId": "c",
+      "explanation": "=== checks both value and data type."
+    },
+    {
+      "id": "js7",
+      "question": "What does NaN mean?",
+      "options": [
+        { "id": "a", "text": "Not a Name" },
+        { "id": "b", "text": "New and Null" },
+        { "id": "c", "text": "Not a Number" },
+        { "id": "d", "text": "Negative Number" }
+      ],
+      "correctOptionId": "c",
+      "explanation": "NaN stands for Not a Number."
+    },
+    {
+      "id": "js8",
+      "question": "Which function prints output to console?",
+      "options": [
+        { "id": "a", "text": "print()" },
+        { "id": "b", "text": "console.log()" },
+        { "id": "c", "text": "log()" },
+        { "id": "d", "text": "echo()" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "console.log() prints output to the browser console."
+    },
+    {
+      "id": "js9",
+      "question": "Which keyword is used to define a function?",
+      "options": [
+        { "id": "a", "text": "def" },
+        { "id": "b", "text": "function" },
+        { "id": "c", "text": "fun" },
+        { "id": "d", "text": "method" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "Functions are defined using the function keyword."
+    },
+    {
+      "id": "js10",
+      "question": "What is an object in JavaScript?",
+      "options": [
+        { "id": "a", "text": "A collection of key-value pairs" },
+        { "id": "b", "text": "An array" },
+        { "id": "c", "text": "A function" },
+        { "id": "d", "text": "A loop" }
+      ],
+      "correctOptionId": "a",
+      "explanation": "Objects store data as key-value pairs."
+    },
+    {
+      "id": "js11",
+      "question": "Which method converts JSON to object?",
+      "options": [
+        { "id": "a", "text": "JSON.stringify()" },
+        { "id": "b", "text": "JSON.parse()" },
+        { "id": "c", "text": "JSON.convert()" },
+        { "id": "d", "text": "JSON.object()" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "JSON.parse() converts JSON string to JavaScript object."
+    },
+    {
+      "id": "js12",
+      "question": "Which loop runs at least once?",
+      "options": [
+        { "id": "a", "text": "for" },
+        { "id": "b", "text": "while" },
+        { "id": "c", "text": "do...while" },
+        { "id": "d", "text": "foreach" }
+      ],
+      "correctOptionId": "c",
+      "explanation": "do...while runs once before checking condition."
+    },
+    {
+      "id": "js13",
+      "question": "Which keyword stops a loop?",
+      "options": [
+        { "id": "a", "text": "stop" },
+        { "id": "b", "text": "exit" },
+        { "id": "c", "text": "break" },
+        { "id": "d", "text": "return" }
+      ],
+      "correctOptionId": "c",
+      "explanation": "break stops loop execution."
+    },
+    {
+      "id": "js14",
+      "question": "What does typeof operator do?",
+      "options": [
+        { "id": "a", "text": "Returns variable value" },
+        { "id": "b", "text": "Returns variable type" },
+        { "id": "c", "text": "Checks condition" },
+        { "id": "d", "text": "Declares variable" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "typeof returns the data type of a variable."
+    },
+    {
+      "id": "js15",
+      "question": "Which keyword is used for constants?",
+      "options": [
+        { "id": "a", "text": "let" },
+        { "id": "b", "text": "var" },
+        { "id": "c", "text": "const" },
+        { "id": "d", "text": "static" }
+      ],
+      "correctOptionId": "c",
+      "explanation": "const declares variables that cannot be reassigned."
+    },
+    {
+      "id": "js16",
+      "question": "What does DOM stand for?",
+      "options": [
+        { "id": "a", "text": "Document Object Model" },
+        { "id": "b", "text": "Data Object Method" },
+        { "id": "c", "text": "Document Oriented Model" },
+        { "id": "d", "text": "Digital Object Manager" }
+      ],
+      "correctOptionId": "a",
+      "explanation": "DOM stands for Document Object Model."
+    },
+    {
+      "id": "js17",
+      "question": "Which method selects an element by ID?",
+      "options": [
+        { "id": "a", "text": "getElement()" },
+        { "id": "b", "text": "querySelector()" },
+        { "id": "c", "text": "getElementById()" },
+        { "id": "d", "text": "selectById()" }
+      ],
+      "correctOptionId": "c",
+      "explanation": "getElementById() selects an element using its ID."
+    },
+    {
+      "id": "js18",
+      "question": "Which keyword handles exceptions?",
+      "options": [
+        { "id": "a", "text": "catch" },
+        { "id": "b", "text": "error" },
+        { "id": "c", "text": "handle" },
+        { "id": "d", "text": "except" }
+      ],
+      "correctOptionId": "a",
+      "explanation": "catch handles errors in try-catch blocks."
+    },
+    {
+      "id": "js19",
+      "question": "What is an arrow function?",
+      "options": [
+        { "id": "a", "text": "A function without name" },
+        { "id": "b", "text": "A function using => syntax" },
+        { "id": "c", "text": "A class" },
+        { "id": "d", "text": "A loop" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "Arrow functions use the => syntax."
+    },
+    {
+      "id": "js20",
+      "question": "Which method adds element to array end?",
+      "options": [
+        { "id": "a", "text": "push()" },
+        { "id": "b", "text": "pop()" },
+        { "id": "c", "text": "shift()" },
+        { "id": "d", "text": "unshift()" }
+      ],
+      "correctOptionId": "a",
+      "explanation": "push() adds element to the end of an array."
+    },
+    {
+      "id": "js21",
+      "question": "Which method removes last array element?",
+      "options": [
+        { "id": "a", "text": "push()" },
+        { "id": "b", "text": "pop()" },
+        { "id": "c", "text": "shift()" },
+        { "id": "d", "text": "splice()" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "pop() removes the last element."
+    },
+    {
+      "id": "js22",
+      "question": "Which operator is used for logical AND?",
+      "options": [
+        { "id": "a", "text": "&" },
+        { "id": "b", "text": "&&" },
+        { "id": "c", "text": "|" },
+        { "id": "d", "text": "!" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "&& represents logical AND."
+    },
+    {
+      "id": "js23",
+      "question": "Which value represents no value?",
+      "options": [
+        { "id": "a", "text": "0" },
+        { "id": "b", "text": "null" },
+        { "id": "c", "text": "false" },
+        { "id": "d", "text": "\"\"" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "null represents no value."
+    },
+    {
+      "id": "js24",
+      "question": "Which function converts string to number?",
+      "options": [
+        { "id": "a", "text": "Number()" },
+        { "id": "b", "text": "parseInt()" },
+        { "id": "c", "text": "Both a and b" },
+        { "id": "d", "text": "toString()" }
+      ],
+      "correctOptionId": "c",
+      "explanation": "Number() and parseInt() convert strings to numbers."
+    },
+    {
+      "id": "js25",
+      "question": "JavaScript runs mainly on?",
+      "options": [
+        { "id": "a", "text": "Server only" },
+        { "id": "b", "text": "Browser" },
+        { "id": "c", "text": "Database" },
+        { "id": "d", "text": "Compiler" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "JavaScript primarily runs in the browser."
+    }
+  ]
+}

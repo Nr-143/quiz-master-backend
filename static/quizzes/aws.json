@@ -1,0 +1,306 @@
+{
+  "category": "AWS",
+  "level": "Beginner",
+  "questions": [
+    {
+      "id": "aws1",
+      "question": "What does AWS stand for?",
+      "options": [
+        { "id": "a", "text": "Advanced Web Services" },
+        { "id": "b", "text": "Amazon Web Services" },
+        { "id": "c", "text": "Application Web Server" },
+        { "id": "d", "text": "Amazon Wide Storage" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "AWS stands for Amazon Web Services."
+    },
+    {
+      "id": "aws2",
+      "question": "AWS is mainly used for?",
+      "options": [
+        { "id": "a", "text": "Game development only" },
+        { "id": "b", "text": "Cloud computing services" },
+        { "id": "c", "text": "Mobile app design" },
+        { "id": "d", "text": "Desktop applications" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "AWS provides cloud computing services like compute, storage, and networking."
+    },
+    {
+      "id": "aws3",
+      "question": "Which AWS service provides virtual servers?",
+      "options": [
+        { "id": "a", "text": "S3" },
+        { "id": "b", "text": "EC2" },
+        { "id": "c", "text": "RDS" },
+        { "id": "d", "text": "Lambda" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "EC2 provides scalable virtual servers."
+    },
+    {
+      "id": "aws4",
+      "question": "Which AWS service is used for object storage?",
+      "options": [
+        { "id": "a", "text": "EBS" },
+        { "id": "b", "text": "S3" },
+        { "id": "c", "text": "EFS" },
+        { "id": "d", "text": "Glacier" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "S3 is used for object storage."
+    },
+    {
+      "id": "aws5",
+      "question": "Which AWS service is serverless?",
+      "options": [
+        { "id": "a", "text": "EC2" },
+        { "id": "b", "text": "Lambda" },
+        { "id": "c", "text": "RDS" },
+        { "id": "d", "text": "VPC" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "AWS Lambda lets you run code without managing servers."
+    },
+    {
+      "id": "aws6",
+      "question": "What is Amazon RDS?",
+      "options": [
+        { "id": "a", "text": "NoSQL database" },
+        { "id": "b", "text": "Relational Database Service" },
+        { "id": "c", "text": "Cache service" },
+        { "id": "d", "text": "Storage service" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "RDS manages relational databases."
+    },
+    {
+      "id": "aws7",
+      "question": "Which AWS service is NoSQL?",
+      "options": [
+        { "id": "a", "text": "MySQL" },
+        { "id": "b", "text": "PostgreSQL" },
+        { "id": "c", "text": "DynamoDB" },
+        { "id": "d", "text": "Oracle" }
+      ],
+      "correctOptionId": "c",
+      "explanation": "DynamoDB is AWS’s NoSQL database."
+    },
+    {
+      "id": "aws8",
+      "question": "What is an AWS Region?",
+      "options": [
+        { "id": "a", "text": "A data center" },
+        { "id": "b", "text": "A geographic area with multiple AZs" },
+        { "id": "c", "text": "A server rack" },
+        { "id": "d", "text": "A CDN" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "A Region contains multiple Availability Zones."
+    },
+    {
+      "id": "aws9",
+      "question": "What is an Availability Zone (AZ)?",
+      "options": [
+        { "id": "a", "text": "A country" },
+        { "id": "b", "text": "A single data center or group of data centers" },
+        { "id": "c", "text": "A server" },
+        { "id": "d", "text": "A VPC" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "AZs are isolated locations within a region."
+    },
+    {
+      "id": "aws10",
+      "question": "Which AWS service manages DNS?",
+      "options": [
+        { "id": "a", "text": "CloudFront" },
+        { "id": "b", "text": "Route 53" },
+        { "id": "c", "text": "VPC" },
+        { "id": "d", "text": "ELB" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "Route 53 provides DNS and domain services."
+    },
+    {
+      "id": "aws11",
+      "question": "What is VPC?",
+      "options": [
+        { "id": "a", "text": "Virtual Private Cloud" },
+        { "id": "b", "text": "Virtual Public Cluster" },
+        { "id": "c", "text": "Verified Private Connection" },
+        { "id": "d", "text": "Virtual Processing Core" }
+      ],
+      "correctOptionId": "a",
+      "explanation": "VPC allows you to create isolated networks."
+    },
+    {
+      "id": "aws12",
+      "question": "Which service distributes incoming traffic?",
+      "options": [
+        { "id": "a", "text": "Auto Scaling" },
+        { "id": "b", "text": "Elastic Load Balancer (ELB)" },
+        { "id": "c", "text": "Route 53" },
+        { "id": "d", "text": "CloudWatch" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "ELB distributes traffic across instances."
+    },
+    {
+      "id": "aws13",
+      "question": "What does Auto Scaling do?",
+      "options": [
+        { "id": "a", "text": "Manually add servers" },
+        { "id": "b", "text": "Automatically adjust instance count" },
+        { "id": "c", "text": "Monitor logs" },
+        { "id": "d", "text": "Store backups" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "Auto Scaling adjusts resources based on load."
+    },
+    {
+      "id": "aws14",
+      "question": "Which AWS service is used for monitoring?",
+      "options": [
+        { "id": "a", "text": "CloudTrail" },
+        { "id": "b", "text": "CloudWatch" },
+        { "id": "c", "text": "SNS" },
+        { "id": "d", "text": "SQS" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "CloudWatch monitors metrics and logs."
+    },
+    {
+      "id": "aws15",
+      "question": "What is CloudTrail?",
+      "options": [
+        { "id": "a", "text": "Performance monitoring" },
+        { "id": "b", "text": "API activity logging" },
+        { "id": "c", "text": "Data backup service" },
+        { "id": "d", "text": "Deployment tool" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "CloudTrail logs API calls for auditing."
+    },
+    {
+      "id": "aws16",
+      "question": "Which AWS service sends notifications?",
+      "options": [
+        { "id": "a", "text": "SQS" },
+        { "id": "b", "text": "SNS" },
+        { "id": "c", "text": "SES" },
+        { "id": "d", "text": "CloudWatch" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "SNS sends notifications and alerts."
+    },
+    {
+      "id": "aws17",
+      "question": "What is SQS?",
+      "options": [
+        { "id": "a", "text": "Simple Query Service" },
+        { "id": "b", "text": "Simple Queue Service" },
+        { "id": "c", "text": "Storage Query System" },
+        { "id": "d", "text": "Server Queue Service" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "SQS is a message queue service."
+    },
+    {
+      "id": "aws18",
+      "question": "Which service is used for email sending?",
+      "options": [
+        { "id": "a", "text": "SNS" },
+        { "id": "b", "text": "SES" },
+        { "id": "c", "text": "SQS" },
+        { "id": "d", "text": "CloudWatch" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "SES is used for sending emails."
+    },
+    {
+      "id": "aws19",
+      "question": "What is IAM?",
+      "options": [
+        { "id": "a", "text": "Identity and Access Management" },
+        { "id": "b", "text": "Instance Access Module" },
+        { "id": "c", "text": "Internal Account Manager" },
+        { "id": "d", "text": "Internet Access Manager" }
+      ],
+      "correctOptionId": "a",
+      "explanation": "IAM manages users, roles, and permissions."
+    },
+    {
+      "id": "aws20",
+      "question": "What is an IAM Role?",
+      "options": [
+        { "id": "a", "text": "A user account" },
+        { "id": "b", "text": "A permission set assumed by services" },
+        { "id": "c", "text": "A group" },
+        { "id": "d", "text": "A policy only" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "Roles grant permissions to AWS services."
+    },
+    {
+      "id": "aws21",
+      "question": "Which service is used for content delivery?",
+      "options": [
+        { "id": "a", "text": "S3" },
+        { "id": "b", "text": "CloudFront" },
+        { "id": "c", "text": "Route 53" },
+        { "id": "d", "text": "ELB" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "CloudFront is AWS’s CDN."
+    },
+    {
+      "id": "aws22",
+      "question": "What is shared responsibility model?",
+      "options": [
+        { "id": "a", "text": "AWS manages everything" },
+        { "id": "b", "text": "Customer manages everything" },
+        { "id": "c", "text": "Security shared between AWS and customer" },
+        { "id": "d", "text": "Only network security" }
+      ],
+      "correctOptionId": "c",
+      "explanation": "AWS and customers share security responsibilities."
+    },
+    {
+      "id": "aws23",
+      "question": "Which storage is block storage?",
+      "options": [
+        { "id": "a", "text": "S3" },
+        { "id": "b", "text": "EBS" },
+        { "id": "c", "text": "EFS" },
+        { "id": "d", "text": "Glacier" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "EBS provides block storage."
+    },
+    {
+      "id": "aws24",
+      "question": "Which AWS service is cheapest for long-term archival?",
+      "options": [
+        { "id": "a", "text": "S3 Standard" },
+        { "id": "b", "text": "EBS" },
+        { "id": "c", "text": "Glacier" },
+        { "id": "d", "text": "EFS" }
+      ],
+      "correctOptionId": "c",
+      "explanation": "Glacier is designed for archival storage."
+    },
+    {
+      "id": "aws25",
+      "question": "AWS pricing is based on?",
+      "options": [
+        { "id": "a", "text": "Fixed monthly fee" },
+        { "id": "b", "text": "Pay as you go" },
+        { "id": "c", "text": "Annual subscription only" },
+        { "id": "d", "text": "License-based" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "AWS follows a pay-as-you-go pricing model."
+    }
+  ]
+}

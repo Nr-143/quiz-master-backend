@@ -1,0 +1,306 @@
+{
+  "category": "DSA",
+  "level": "Beginner",
+  "questions": [
+    {
+      "id": "dsa1",
+      "question": "What is a data structure?",
+      "options": [
+        { "id": "a", "text": "A programming language" },
+        { "id": "b", "text": "A way to store and organize data" },
+        { "id": "c", "text": "A database" },
+        { "id": "d", "text": "An algorithm" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "Data structures organize data for efficient access and modification."
+    },
+    {
+      "id": "dsa2",
+      "question": "Which data structure follows FIFO?",
+      "options": [
+        { "id": "a", "text": "Stack" },
+        { "id": "b", "text": "Queue" },
+        { "id": "c", "text": "Array" },
+        { "id": "d", "text": "Tree" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "Queue follows First In First Out."
+    },
+    {
+      "id": "dsa3",
+      "question": "Which data structure follows LIFO?",
+      "options": [
+        { "id": "a", "text": "Queue" },
+        { "id": "b", "text": "Stack" },
+        { "id": "c", "text": "Linked List" },
+        { "id": "d", "text": "Graph" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "Stack follows Last In First Out."
+    },
+    {
+      "id": "dsa4",
+      "question": "What is the time complexity of accessing an array element by index?",
+      "options": [
+        { "id": "a", "text": "O(n)" },
+        { "id": "b", "text": "O(log n)" },
+        { "id": "c", "text": "O(1)" },
+        { "id": "d", "text": "O(n log n)" }
+      ],
+      "correctOptionId": "c",
+      "explanation": "Array indexing is constant time."
+    },
+    {
+      "id": "dsa5",
+      "question": "Which data structure uses nodes with pointers?",
+      "options": [
+        { "id": "a", "text": "Array" },
+        { "id": "b", "text": "Linked List" },
+        { "id": "c", "text": "Stack" },
+        { "id": "d", "text": "Queue" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "Linked lists store data using nodes and pointers."
+    },
+    {
+      "id": "dsa6",
+      "question": "Which operation is faster in a linked list than an array?",
+      "options": [
+        { "id": "a", "text": "Search" },
+        { "id": "b", "text": "Insertion at beginning" },
+        { "id": "c", "text": "Access by index" },
+        { "id": "d", "text": "Sorting" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "Insertion at head is O(1) in linked list."
+    },
+    {
+      "id": "dsa7",
+      "question": "What is a tree?",
+      "options": [
+        { "id": "a", "text": "Linear data structure" },
+        { "id": "b", "text": "Hierarchical data structure" },
+        { "id": "c", "text": "Circular structure" },
+        { "id": "d", "text": "Random structure" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "Trees represent hierarchical relationships."
+    },
+    {
+      "id": "dsa8",
+      "question": "What is the maximum number of children in a binary tree node?",
+      "options": [
+        { "id": "a", "text": "1" },
+        { "id": "b", "text": "2" },
+        { "id": "c", "text": "3" },
+        { "id": "d", "text": "Unlimited" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "Binary tree nodes have at most two children."
+    },
+    {
+      "id": "dsa9",
+      "question": "Which traversal visits root first?",
+      "options": [
+        { "id": "a", "text": "Inorder" },
+        { "id": "b", "text": "Preorder" },
+        { "id": "c", "text": "Postorder" },
+        { "id": "d", "text": "Level order" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "Preorder traversal visits root first."
+    },
+    {
+      "id": "dsa10",
+      "question": "What is a graph?",
+      "options": [
+        { "id": "a", "text": "Nodes connected by edges" },
+        { "id": "b", "text": "Only trees" },
+        { "id": "c", "text": "Only cycles" },
+        { "id": "d", "text": "Only arrays" }
+      ],
+      "correctOptionId": "a",
+      "explanation": "Graphs consist of vertices and edges."
+    },
+    {
+      "id": "dsa11",
+      "question": "Which algorithm is used for searching in sorted array?",
+      "options": [
+        { "id": "a", "text": "Linear search" },
+        { "id": "b", "text": "Binary search" },
+        { "id": "c", "text": "DFS" },
+        { "id": "d", "text": "BFS" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "Binary search works on sorted arrays."
+    },
+    {
+      "id": "dsa12",
+      "question": "What is the time complexity of binary search?",
+      "options": [
+        { "id": "a", "text": "O(n)" },
+        { "id": "b", "text": "O(log n)" },
+        { "id": "c", "text": "O(1)" },
+        { "id": "d", "text": "O(n log n)" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "Binary search halves the search space."
+    },
+    {
+      "id": "dsa13",
+      "question": "Which sorting algorithm has best average time complexity?",
+      "options": [
+        { "id": "a", "text": "Bubble Sort" },
+        { "id": "b", "text": "Insertion Sort" },
+        { "id": "c", "text": "Quick Sort" },
+        { "id": "d", "text": "Selection Sort" }
+      ],
+      "correctOptionId": "c",
+      "explanation": "Quick sort has O(n log n) average complexity."
+    },
+    {
+      "id": "dsa14",
+      "question": "Which sorting algorithm is stable?",
+      "options": [
+        { "id": "a", "text": "Quick Sort" },
+        { "id": "b", "text": "Heap Sort" },
+        { "id": "c", "text": "Merge Sort" },
+        { "id": "d", "text": "Selection Sort" }
+      ],
+      "correctOptionId": "c",
+      "explanation": "Merge sort preserves relative order."
+    },
+    {
+      "id": "dsa15",
+      "question": "What is recursion?",
+      "options": [
+        { "id": "a", "text": "Looping mechanism" },
+        { "id": "b", "text": "Function calling itself" },
+        { "id": "c", "text": "Conditional logic" },
+        { "id": "d", "text": "Sorting technique" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "Recursion occurs when a function calls itself."
+    },
+    {
+      "id": "dsa16",
+      "question": "What is base case in recursion?",
+      "options": [
+        { "id": "a", "text": "First call" },
+        { "id": "b", "text": "Last return" },
+        { "id": "c", "text": "Condition to stop recursion" },
+        { "id": "d", "text": "Loop condition" }
+      ],
+      "correctOptionId": "c",
+      "explanation": "Base case prevents infinite recursion."
+    },
+    {
+      "id": "dsa17",
+      "question": "Which data structure is used for BFS?",
+      "options": [
+        { "id": "a", "text": "Stack" },
+        { "id": "b", "text": "Queue" },
+        { "id": "c", "text": "Array" },
+        { "id": "d", "text": "Tree" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "BFS uses a queue."
+    },
+    {
+      "id": "dsa18",
+      "question": "Which data structure is used for DFS?",
+      "options": [
+        { "id": "a", "text": "Queue" },
+        { "id": "b", "text": "Stack" },
+        { "id": "c", "text": "Heap" },
+        { "id": "d", "text": "Graph" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "DFS uses stack or recursion."
+    },
+    {
+      "id": "dsa19",
+      "question": "What is a heap?",
+      "options": [
+        { "id": "a", "text": "Sorted array" },
+        { "id": "b", "text": "Special tree-based structure" },
+        { "id": "c", "text": "Linked list" },
+        { "id": "d", "text": "Graph" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "Heap is a complete binary tree."
+    },
+    {
+      "id": "dsa20",
+      "question": "Which heap is used in priority queue?",
+      "options": [
+        { "id": "a", "text": "Min heap" },
+        { "id": "b", "text": "Max heap" },
+        { "id": "c", "text": "Both" },
+        { "id": "d", "text": "None" }
+      ],
+      "correctOptionId": "c",
+      "explanation": "Priority queues can use min or max heaps."
+    },
+    {
+      "id": "dsa21",
+      "question": "What is time complexity?",
+      "options": [
+        { "id": "a", "text": "Execution speed" },
+        { "id": "b", "text": "Amount of memory used" },
+        { "id": "c", "text": "Growth of algorithm time with input size" },
+        { "id": "d", "text": "CPU cycles" }
+      ],
+      "correctOptionId": "c",
+      "explanation": "Time complexity measures growth rate."
+    },
+    {
+      "id": "dsa22",
+      "question": "What does Big-O represent?",
+      "options": [
+        { "id": "a", "text": "Best case" },
+        { "id": "b", "text": "Worst case" },
+        { "id": "c", "text": "Average case" },
+        { "id": "d", "text": "Exact runtime" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "Big-O represents worst-case complexity."
+    },
+    {
+      "id": "dsa23",
+      "question": "Which is NOT a linear data structure?",
+      "options": [
+        { "id": "a", "text": "Array" },
+        { "id": "b", "text": "Linked List" },
+        { "id": "c", "text": "Stack" },
+        { "id": "d", "text": "Tree" }
+      ],
+      "correctOptionId": "d",
+      "explanation": "Tree is non-linear."
+    },
+    {
+      "id": "dsa24",
+      "question": "What is hashing?",
+      "options": [
+        { "id": "a", "text": "Sorting data" },
+        { "id": "b", "text": "Mapping keys to values" },
+        { "id": "c", "text": "Encrypting data" },
+        { "id": "d", "text": "Compressing data" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "Hashing maps keys to indices."
+    },
+    {
+      "id": "dsa25",
+      "question": "Which data structure is best for fast lookup?",
+      "options": [
+        { "id": "a", "text": "Array" },
+        { "id": "b", "text": "Linked List" },
+        { "id": "c", "text": "Hash Table" },
+        { "id": "d", "text": "Stack" }
+      ],
+      "correctOptionId": "c",
+      "explanation": "Hash tables provide near O(1) lookup."
+    }
+  ]
+}
