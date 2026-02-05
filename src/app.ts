@@ -47,7 +47,8 @@ import userRoutes from './routes/user.routes';
 import scoreRoutes from './routes/score.routes';
 import examRoutes from './routes/exam.routes';
 import categoryRoutes from './routes/category.routes';
-import questionPreferenceRoutes from './routes/question-preference.routes';
+import userQuestionRoutes from './routes/user-question.routes';
+import questionsRoutes from './routes/questions.routes';
 
 // Routes
 app.use('/api/v1/auth', authRoutes);
@@ -57,7 +58,8 @@ app.use('/api/v1/users', userRoutes);
 app.use('/api/v1/scores', scoreRoutes);
 app.use('/api/v1/exams', examRoutes);
 app.use('/api/v1/categories', categoryRoutes);
-app.use('/api/v1/questions', questionPreferenceRoutes);
+app.use('/api/v1/questions', questionsRoutes);
+app.use('/api/v1/user-questions', userQuestionRoutes); // Legacy support
 
 // 404 Handler
 app.use('*', (req: Request, res: Response, next: NextFunction) => {
