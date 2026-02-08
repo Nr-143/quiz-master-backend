@@ -1,7 +1,7 @@
 import mongoose, { Schema, Document } from 'mongoose';
 
 export interface IScore extends Document {
-    user: mongoose.Types.ObjectId;
+    userId: string;
     category: string;
     score: number;
     total: number;
@@ -10,7 +10,7 @@ export interface IScore extends Document {
 
 const ScoreSchema: Schema = new Schema(
     {
-        user: { type: Schema.Types.ObjectId, ref: 'User', required: true },
+        userId: { type: String, required: true, ref: 'User' },
         category: { type: String, required: true },
         score: { type: Number, required: true },
         total: { type: Number, required: true },

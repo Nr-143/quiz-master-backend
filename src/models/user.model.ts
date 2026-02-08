@@ -10,7 +10,7 @@ export interface IUser {
     password?: string;
     phone?: string;
     qualification?: string;
-    role: 'user' | 'admin';
+    role: 'user' | 'admin' | 'teacher' | 'hr';
     xp: number;
     credits: number;
     level: number;
@@ -42,13 +42,14 @@ export interface IUser {
 
 const UserSchema: Schema = new Schema(
     {
-        userId: { type: String, default: randomUUID, unique: true },
+        _id: { type: String, default: randomUUID }, // Explicitly define _id as String
+        userId: { type: String, default: randomUUID, unique: true }, // Keep userId for backward compat if needed, or make it alias
         username: { type: String, required: true, unique: true, trim: true },
         email: { type: String, required: true, unique: true, lowercase: true, trim: true },
         password: { type: String, required: true, select: false },
         phone: { type: String, trim: true },
         qualification: { type: String, trim: true },
-        role: { type: String, enum: ['user', 'admin'], default: 'user' },
+        role: { type: String, enum: ['user', 'admin', 'teacher', 'hr'], default: 'user' },
         xp: { type: Number, default: 0 },
         credits: { type: Number, default: 50 },
         level: { type: Number, default: 1 },

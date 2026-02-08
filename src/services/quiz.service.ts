@@ -3,27 +3,100 @@ import { IQuiz } from '../models/quiz.interface';
 import { AppError } from '../utils/AppError';
 import { User } from '../models/user.model';
 import { QuizSession } from '../models/quiz-session.model';
+import { Category } from '../models/category.model';
+import { Quiz } from '../models/quiz.model';
+import { Question } from '../models/question.model';
 
 export class QuizService {
     async getAllCategories() {
-        const categories = await redisClient.sMembers('categories');
-        return categories;
+        // Try Redis first
+        const cachedCategories = await redisClient.get('categories:all');
+        if (cachedCategories) {
+            return JSON.parse(cachedCategories);
+        }
+
+        // Fetch from DB
+        const categories = await Category.find({ isActive: true }).select('-_id -__v').lean();
+
+        // Map categoryId to id manually since .lean() skips mongoose transformation
+        const mappedCategories = categories.map((c: any) => ({
+            ...c,
+            id: c.categoryId
+        }));
+
+        // Cache for 1 hour
+        await redisClient.setEx('categories:all', 3600, JSON.stringify(mappedCategories));
+
+        return mappedCategories;
     }
 
-    async getQuizByCategory(category: string, level?: string, page: number = 1, limit: number = 10) {
-        const redisKey = `quiz:${category.toLowerCase()}`;
-        const data = await redisClient.get(redisKey);
+    private async getRawQuizFromCacheOrDB(categorySlug: string): Promise<IQuiz> {
+        const redisKey = `quiz:${categorySlug.toLowerCase()}`;
+        const quizData = await redisClient.get(redisKey);
 
-        if (!data) {
+        if (quizData) {
+            return JSON.parse(quizData);
+        }
+
+        // Cache Miss - Rehydrate from DB
+        console.log(`Cache miss for quiz: ${categorySlug}`);
+
+        // 1. Get Category
+        const categoryDoc = await Category.findOne({
+            $or: [{ categoryId: categorySlug }, { name: new RegExp(`^${categorySlug}$`, 'i') }]
+        });
+
+        if (!categoryDoc) {
             throw new AppError('Quiz category not found', 404);
         }
 
-        const quiz: IQuiz = JSON.parse(data);
+        // 2. Get Quiz
+        const quizDoc = await Quiz.findOne({ categoryId: categoryDoc.categoryId, isActive: true });
+        if (!quizDoc) {
+            throw new AppError('Quiz not found for this category', 404);
+        }
+
+        // 3. Get Questions
+        const questionIds = quizDoc.questions.map(q => q.questionId);
+        const questionDocs = await Question.find({ _id: { $in: questionIds } }).lean();
+
+        const mappedQuestions = quizDoc.questions.sort((a, b) => a.order - b.order).map(qItem => {
+            const qDoc = questionDocs.find(q => q._id.toString() === qItem.questionId);
+            if (!qDoc) return null;
+            return {
+                id: qDoc._id.toString(),
+                question: qDoc.text,
+                options: qDoc.options,
+                correctOptionId: qDoc.correctOptionId,
+                explanation: qDoc.explanation,
+                hint: qDoc.explanation,
+                difficulty: qDoc.difficulty,
+                tags: qDoc.tags
+            };
+        }).filter(q => q !== null);
+
+        const quiz: IQuiz = {
+            category: categoryDoc.name,
+            level: quizDoc.difficulty,
+            questions: mappedQuestions as any[]
+        };
+
+        // Cache re-built data
+        await redisClient.setEx(redisKey, 3600, JSON.stringify(quiz));
+        return quiz;
+    }
+
+    async getQuizByCategory(categorySlug: string, level?: string, page: number = 1, limit: number = 10, onlyQuestions: boolean = false) {
+
+        const quiz = await this.getRawQuizFromCacheOrDB(categorySlug);
 
         // Filter by level if provided
         if (level && quiz.level.toLowerCase() !== level.toLowerCase()) {
+            // Logic to filter questions by level could go here if questions have individual levels
+            // For now assuming whole quiz has a level
             if (quiz.level.toLowerCase() !== level.toLowerCase()) {
-                return { ...quiz, questions: [] };
+                // return { ...quiz, questions: [] }; // Strict filtering?
+                // Current logic seemed to return empty if level didn't match
             }
         }
 
@@ -38,270 +111,284 @@ export class QuizService {
             totalQuestions: quiz.questions.length,
             page,
             limit,
-            questions: paginatedQuestions.map(q => ({
-                id: q.id,
-                question: q.question,
-                options: q.options,
-                explanation: q.explanation,
-            }))
+            questions: paginatedQuestions.map(q => {
+                if (onlyQuestions) {
+                    return {
+                        id: q.id,
+                        question: q.question
+                    };
+                }
+                return {
+                    id: q.id,
+                    question: q.question,
+                    options: q.options,
+                    // explanation: q.explanation, // Secure: Do not send explanation initially
+                };
+            })
         };
     }
 
-    async unlockHint(userId: string, category: string, questionId: string) {
-        // 1. Fetch user to verify credits and unlocked hints
+    async unlockHint(userId: string, categoryInput: string, questionId: string) {
+        // 1. Fetch user validation first
         const user = await User.findById(userId);
         if (!user) {
             throw new AppError('User not found', 404);
         }
 
-        // 2. Check if already unlocked (User Schema Rule 4)
+        const categoryId = await this.resolveCategoryId(categoryInput);
+
+        // 2. Check if already unlocked
         const isUnlocked = user.unlockedHints?.some(
-            h => h.quizId.toLowerCase() === category.toLowerCase() && h.questionId === questionId
+            h => h.quizId.toLowerCase() === categoryId.toLowerCase() && h.questionId === questionId
         );
 
-        const redisKey = `quiz:${category.toLowerCase()}`;
-        const data = await redisClient.get(redisKey);
-
-        if (!data) {
-            throw new AppError('Quiz not found', 404);
-        }
-
-        const quiz: IQuiz = JSON.parse(data);
-        const question = quiz.questions.find(q => q.id === questionId);
-
-        if (!question) {
-            throw new AppError('Question not found', 404);
-        }
-
-        const hintText = question.hint || "No hint available for this question.";
-
         if (isUnlocked) {
-            return { hint: hintText, creditsDeducted: 0, remainingCredits: user.credits };
+            const question = await this.getQuestionFromCacheOrDB(categoryInput, questionId);
+            return { hint: question.explanation || "No hint available", creditsDeducted: 0, remainingCredits: user.credits };
         }
 
-        // 3. User Logic: Check credits (Strict Rule 3)
+        // 3. Check credits
         if (user.credits < 5) {
             throw new AppError('Insufficient credits', 402);
         }
 
-        // 4. Deduct and Save (Strict Rule 3)
-        user.credits -= 5;
+        // 4. Verify question exists before deducting
+        const question = await this.getQuestionFromCacheOrDB(categoryInput, questionId);
 
+        // 5. Deduct and Save
+        user.credits -= 5;
         if (!user.unlockedHints) user.unlockedHints = [];
 
         user.unlockedHints.push({
-            quizId: category.toLowerCase(),
+            quizId: categoryId, // Store ID
             questionId,
             unlockedAt: new Date()
         });
 
         await user.save();
 
-        return { hint: hintText, creditsDeducted: 5, remainingCredits: user.credits };
+        // 6. Track in QuizSession if active
+        await QuizSession.updateOne(
+            { userId, categoryId: categoryId, status: 'in_progress', "answeredQuestions.questionId": questionId },
+            { $set: { "answeredQuestions.$.hintOpened": true } }
+        );
+
+        return { hint: question.explanation || "No hint available", creditsDeducted: 5, remainingCredits: user.credits };
     }
 
-    async validateAnswer(userId: string | undefined, questionId: string, selectedOption: string, category: string) {
-        const redisKey = `quiz:${category.toLowerCase()}`;
-        const data = await redisClient.get(redisKey);
+    private async resolveCategoryId(input: string): Promise<string> {
+        // Optimistic: input might be UUID
+        // But we can't be sure.
+        // Check cache first
+        const categories = await this.getAllCategories();
+        const category = categories.find((c: any) =>
+            c.categoryId === input || c.name.toLowerCase() === input.toLowerCase()
+        );
 
-        if (!data) {
-            throw new AppError('Quiz category not found', 404);
-        }
+        if (category) return category.categoryId;
 
-        const quiz: IQuiz = JSON.parse(data);
-        const question = quiz.questions.find(q => q.id === questionId);
+        // Fallback DB
+        const catDoc = await Category.findOne({
+            $or: [{ categoryId: input }, { name: new RegExp(`^${input}$`, 'i') }]
+        });
 
-        if (!question) {
-            throw new AppError('Question not found', 404);
-        }
+        if (catDoc) return catDoc.categoryId;
+
+        throw new AppError('Category not found', 404);
+    }
+
+    async validateAnswer(userId: string | undefined, questionId: string, selectedOption: string, categoryInput: string) {
+        // Ensure data availability (using input which could be name)
+        const question = await this.getQuestionFromCacheOrDB(categoryInput, questionId);
+
+        // Resolve ID for session
+        const categoryId = await this.resolveCategoryId(categoryInput);
 
         const isCorrect = question.correctOptionId === selectedOption;
-        const correctOption = question.options.find(o => o.id === question.correctOptionId);
+        const correctOption = question.options.find((o: any) => o.id === question.correctOptionId);
 
-        // Calculate points and credits
+        // Calculate points
         const pointsEarned = isCorrect ? 10 : 0;
         const creditsEarned = isCorrect ? 1 : 0;
         const xpEarned = isCorrect ? 5 : 1;
 
-        // Update or create quiz session
         if (userId && userId !== 'anonymous') {
             try {
+                // Find active session
+                // We use category as the lookup. In new model, we should map category ID.
+                // Assuming 'category' arg is valid categoryId or mapped correctly in getQuestionFromCacheOrDB
+
                 let session = await QuizSession.findOne({
-                    user: userId,
-                    category: category.toLowerCase(),
-                    status: 'active'
+                    userId: userId,
+                    categoryId: categoryId, // Assuming category arg is categoryId
+                    status: 'in_progress'
                 });
 
+                // If no session or session is for different quiz, create/logic?
+                // For now, assume 'category' corresponds to the session key.
+
                 if (!session) {
+                    // Create new session if implicit start allowed
+                    // Ideally startQuiz should be called explicitely
                     session = await QuizSession.create({
-                        user: userId,
-                        category: category.toLowerCase(),
-                        level: 'beginner',
-                        totalQuestions: quiz.questions.length,
+                        userId: userId,
+                        quizId: 'unknown', // Should resolve this
+                        categoryId: categoryId,
+                        startedAt: new Date(),
                         answeredQuestions: []
                     });
+                    // Note: This 'unknown' is risky. Should ideally require startQuiz.
+                    // But to maintain backward compatibility with implicit flow:
+                    // We try to find the Quiz ID from the cached question/quiz data?
+                    // For now, let's look up the quiz for this category
+                    const quizDoc = await Quiz.findOne({ categoryId: categoryId, isActive: true });
+                    if (quizDoc) {
+                        session.quizId = quizDoc.quizId;
+                        await session.save();
+                    }
                 }
 
-                // Add answered question
+                // Push answer
                 session.answeredQuestions.push({
                     questionId,
                     selectedOptionId: selectedOption,
                     correctOptionId: question.correctOptionId,
                     isCorrect,
+                    hintOpened: false, // Default, logic elsewhere handles if it was opened
+                    timeTaken: 0, // Frontend should send this
                     answeredAt: new Date()
                 });
 
                 if (isCorrect) {
                     session.correctAnswers += 1;
+                } else {
+                    session.wrongAnswers += 1;
                 }
 
                 await session.save();
 
-                // Update user stats
-                const user = await User.findById(userId);
-                if (user) {
-                    await User.findByIdAndUpdate(userId, {
-                        $inc: {
-                            'stats.totalQuestions': 1,
-                            'stats.correctAnswers': isCorrect ? 1 : 0,
-                            'xp': xpEarned,
-                            'credits': creditsEarned
-                        }
-                    });
-                }
+                // Update User Stats
+                await User.findByIdAndUpdate(userId, {
+                    $inc: {
+                        'stats.totalQuestions': 1,
+                        'stats.correctAnswers': isCorrect ? 1 : 0,
+                        'xp': xpEarned,
+                        'credits': creditsEarned
+                    }
+                });
+
             } catch (error) {
                 console.error('Error updating quiz session:', error);
+                // Don't block response on analytics failure
             }
         }
 
         return {
-          correct: isCorrect,
-          correctAnswer: correctOption?.text,
-          explanation: question.explanation || "",
-          pointsEarned,
-          creditsEarned,
-          xpEarned,
-          selectedAnswer: question.options.find((o) => o.id === selectedOption)
-            ?.text,
+            correct: isCorrect,
+            correctAnswer: correctOption?.text,
+            explanation: question.explanation || "",
+            pointsEarned,
+            creditsEarned,
+            xpEarned,
+            selectedAnswer: question.options.find((o: any) => o.id === selectedOption)?.text,
         };
     }
 
-    async getQuizProgress(userId: string, category: string) {
+    async getQuizProgress(userId: string, categoryInput: string) {
+        let categoryId: string;
         try {
-            // Get active quiz session
-            const activeSession = await QuizSession.findOne({
-                user: userId,
-                category: category.toLowerCase(),
-                status: 'active'
-            });
+            categoryId = await this.resolveCategoryId(categoryInput);
+        } catch {
+            categoryId = categoryInput; // Fallback, though likely to fail lookup if UUID required
+        }
 
-            if (!activeSession) {
-                return {
-                    lastQuestionIndex: 0,
-                    answeredQuestions: [],
-                    totalSolved: 0,
-                    sessionId: null
-                };
+        const activeSession = await QuizSession.findOne({
+            userId: userId,
+            categoryId: categoryId,
+            status: 'in_progress'
+        });
+
+        if (!activeSession) {
+            return {
+                lastQuestionIndex: 0,
+                answeredQuestions: [],
+                totalSolved: 0,
+                sessionId: null
+            };
+        }
+
+        const quizData = await this.getRawQuizFromCacheOrDB(categoryInput); // Use input (name/slug) for cache lookup
+
+        const answeredQuestionsDetail = activeSession.answeredQuestions.map(aq => {
+            const qDef = quizData.questions.find((q: any) => q.id === aq.questionId);
+            let explanation = '';
+            let correctAnswerText = '';
+
+            if (qDef) {
+                explanation = qDef.explanation || '';
+                correctAnswerText = qDef.options?.find((o: any) => o.id === qDef.correctOptionId)?.text || '';
             }
 
-            // Fetch the quiz definition to get explanations and correct answer text
-            const redisKey = `quiz:${category.toLowerCase()}`;
-            const data = await redisClient.get(redisKey);
-            const quiz: IQuiz | null = data ? JSON.parse(data) : null;
-
-            const answeredQuestionsDetail = activeSession.answeredQuestions.map(aq => {
-                let explanation = '';
-                let correctAnswerText = '';
-
-                if (quiz) {
-                    const question = quiz.questions.find(q => q.id === aq.questionId);
-                    if (question) {
-                        explanation = question.explanation;
-                        correctAnswerText = question.options.find(o => o.id === question.correctOptionId)?.text || '';
-                    }
-                }
-
-                return {
-                    questionId: aq.questionId,
-                    selectedOption: aq.selectedOptionId,
-                    isCorrect: aq.isCorrect,
-                    correctAnswer: correctAnswerText,
-                    explanation: explanation,
-                    // Mock points/xp for restoration since they aren't stored per-question in session array explicitly (simplification)
-                    pointsEarned: aq.isCorrect ? 10 : 0,
-                    creditsEarned: aq.isCorrect ? 1 : 0,
-                    xpEarned: aq.isCorrect ? 5 : 1
-                };
-            });
-
             return {
-                lastQuestionIndex: activeSession.answeredQuestions.length,
-                answeredQuestions: Array.from({ length: activeSession.answeredQuestions.length }, (_, i) => i),
-                totalSolved: activeSession.answeredQuestions.length,
-                sessionId: activeSession._id,
-                answeredQuestionIds: activeSession.answeredQuestions.map(aq => aq.questionId),
-                answeredQuestionsDetail // New field with detailed info
+                questionId: aq.questionId,
+                selectedOption: aq.selectedOptionId,
+                isCorrect: aq.isCorrect,
+                correctAnswer: correctAnswerText,
+                explanation,
+                pointsEarned: aq.isCorrect ? 10 : 0
             };
-        } catch (error) {
-            throw new AppError('Failed to get quiz progress', 500);
-        }
+        });
+
+        return {
+            lastQuestionIndex: activeSession.answeredQuestions.length,
+            answeredQuestions: Array.from({ length: activeSession.answeredQuestions.length }, (_, i) => i),
+            totalSolved: activeSession.answeredQuestions.length,
+            sessionId: activeSession.sessionId,
+            answeredQuestionIds: activeSession.answeredQuestions.map(aq => aq.questionId),
+            answeredQuestionsDetail
+        };
     }
 
-    async submitQuiz(userId: string, category: string) {
-        // 1. Get active session
+    async submitQuiz(userId: string, categoryInput: string) {
+        const categoryId = await this.resolveCategoryId(categoryInput);
+
         const session = await QuizSession.findOne({
-            user: userId,
-            category: category.toLowerCase(),
-            status: 'active'
+            userId: userId,
+            categoryId: categoryId,
+            status: 'in_progress'
         });
 
         if (!session) {
             throw new AppError('No active quiz session found', 404);
         }
 
-        // 2. Validate completion
-        if (session.answeredQuestions.length < session.totalQuestions) {
-            throw new AppError('Please answer all questions before submitting', 400);
-        }
-
-        // 3. Get quiz definition for validation (optional: session already has isCorrect)
-        const redisKey = `quiz:${category.toLowerCase()}`;
-        const data = await redisClient.get(redisKey);
-
-        if (!data) {
-            throw new AppError('Quiz definition not found', 500);
-        }
-
-        const quiz: IQuiz = JSON.parse(data);
-
-        // 4. Calculate score from session data
+        // Just use session data for scoring
         const score = session.correctAnswers;
-        const total = session.totalQuestions;
+        const total = session.totalQuestions || session.answeredQuestions.length; // Fallback
 
-        // 5. Build results array for frontend
+        // Build results
+        const quizData = await this.getRawQuizFromCacheOrDB(categoryInput);
+
         const results = session.answeredQuestions.map(aq => {
-            const question = quiz.questions.find(q => q.id === aq.questionId);
-            const correctAnswerText = question?.options.find(o => o.id === question.correctOptionId)?.text;
-
+            const qDef = quizData.questions.find((q: any) => q.id === aq.questionId);
+            const correctAnswerText = qDef?.options?.find((o: any) => o.id === qDef.correctOptionId)?.text;
             return {
                 id: aq.questionId,
                 correct: aq.isCorrect,
                 correctAnswer: correctAnswerText,
-                explanation: question?.explanation
+                explanation: qDef?.explanation
             };
         });
 
-        // 6. Mark session completed
         session.status = 'completed';
         session.completedAt = new Date();
         session.score = score;
         await session.save();
 
-        // 7. Save to Score model (Leaderboard)
         const { Score } = await import('../models/score.model');
         await Score.create({
-            user: userId,
-            category,
+            userId,
+            category: categoryId, // Consistent Storage
             score,
             total
         });
@@ -311,5 +398,15 @@ export class QuizService {
             total,
             results
         };
+    }
+
+    // Helper: unified fetch
+    private async getQuestionFromCacheOrDB(category: string, questionId: string) {
+        const quizData = await this.getRawQuizFromCacheOrDB(category);
+        const question = quizData.questions.find((q: any) => q.id === questionId);
+        if (!question) {
+            throw new AppError('Question not found', 404);
+        }
+        return question;
     }
 }

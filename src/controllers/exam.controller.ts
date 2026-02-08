@@ -19,7 +19,7 @@ export class ExamController {
         .limit(Number(limit) * 1)
         .skip((Number(page) - 1) * Number(limit))
         .lean();
-        console.log("exams", exams);
+      console.log("exams", exams);
 
       const total = await Exam.countDocuments(filter);
 
@@ -68,7 +68,7 @@ export class ExamController {
   static async applyForExam(req: Request, res: Response) {
     try {
       const { examId } = req.params;
-      const userId = req.user?._id;
+      const userId = req.user?.userId;
       const { agreedToTerms } = req.body;
 
       if (!agreedToTerms) {
@@ -138,7 +138,7 @@ export class ExamController {
   // Get user's exam applications
   static async getUserApplications(req: Request, res: Response) {
     try {
-      const userId = req.user?._id;
+      const userId = req.user?.userId;
       const { status } = req.query;
 
       const filter: any = { userId };
@@ -165,7 +165,7 @@ export class ExamController {
   static async checkApplicationStatus(req: Request, res: Response) {
     try {
       const { examId } = req.params;
-      const userId = req.user?._id;
+      const userId = req.user?.userId;
 
       const application = await ExamApplication.findOne({
         examId,

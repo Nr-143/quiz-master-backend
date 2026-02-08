@@ -10,7 +10,7 @@ export class ScoreService {
     }
 
     async getUserStats(userId: string) {
-        const scores = await Score.find({ user: userId });
+        const scores = await Score.find({ userId: userId });
         const totalQuizzes = scores.length;
         const totalScore = scores.reduce((acc, curr) => acc + curr.score, 0);
         const averageScore = totalQuizzes > 0 ? (totalScore / totalQuizzes).toFixed(2) : 0;

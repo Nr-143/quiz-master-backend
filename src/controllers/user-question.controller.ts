@@ -8,12 +8,12 @@ export class UserQuestionController {
   // Get user's categories
   static async getUserCategories(req: Request, res: Response) {
     try {
-      const userId = req.user?.id;
+      const userId = req.user?.userId;
       if (!userId) {
         return res.status(401).json({ success: false, message: 'Unauthorized' });
       }
 
-      const categories = await UserCategory.find({ ownerId: userId })
+      const categories = await UserCategory.find({ userId: userId })
         .sort({ updatedAt: -1 });
 
       res.json({ success: true, data: categories });
@@ -25,17 +25,17 @@ export class UserQuestionController {
   // Create new category
   static async createCategory(req: Request, res: Response) {
     try {
-      const userId = req.user?.id;
+      const userId = req.user?.userId;
       if (!userId) {
         return res.status(401).json({ success: false, message: 'Unauthorized' });
       }
 
       const { name, description } = req.body;
-      
+
       const category = new UserCategory({
         name,
         description,
-        ownerId: userId
+        userId: userId
       });
 
       await category.save();
@@ -58,16 +58,16 @@ export class UserQuestionController {
   // Get category with questions
   static async getCategoryWithQuestions(req: Request, res: Response) {
     try {
-      const userId = req.user?.id;
+      const userId = req.user?.userId;
       const { categoryId } = req.params;
 
       if (!userId) {
         return res.status(401).json({ success: false, message: 'Unauthorized' });
       }
 
-      const category = await UserCategory.findOne({ 
-        _id: categoryId, 
-        ownerId: userId 
+      const category = await UserCategory.findOne({
+        _id: categoryId,
+        userId: userId
       });
 
       if (!category) {
@@ -90,12 +90,12 @@ export class UserQuestionController {
         details: {}
       }).save();
 
-      res.json({ 
-        success: true, 
-        data: { 
-          category, 
-          questions 
-        } 
+      res.json({
+        success: true,
+        data: {
+          category,
+          questions
+        }
       });
     } catch (error) {
       res.status(500).json({ success: false, message: 'Failed to fetch category' });
@@ -105,7 +105,7 @@ export class UserQuestionController {
   // Create question
   static async createQuestion(req: Request, res: Response) {
     try {
-      const userId = req.user?.id;
+      const userId = req.user?.userId;
       if (!userId) {
         return res.status(401).json({ success: false, message: 'Unauthorized' });
       }
@@ -113,9 +113,9 @@ export class UserQuestionController {
       const { categoryId, question, options, correctOptionId, explanation, difficulty, tags } = req.body;
 
       // Verify category ownership
-      const category = await UserCategory.findOne({ 
-        _id: categoryId, 
-        ownerId: userId 
+      const category = await UserCategory.findOne({
+        _id: categoryId,
+        userId: userId
       });
 
       if (!category) {
@@ -129,7 +129,7 @@ export class UserQuestionController {
 
       const newQuestion = new UserQuestion({
         categoryId,
-        ownerId: userId,
+        userId: userId,
         question,
         options,
         correctOptionId,
@@ -164,16 +164,16 @@ export class UserQuestionController {
   // Update question
   static async updateQuestion(req: Request, res: Response) {
     try {
-      const userId = req.user?.id;
+      const userId = req.user?.userId;
       const { questionId } = req.params;
 
       if (!userId) {
         return res.status(401).json({ success: false, message: 'Unauthorized' });
       }
 
-      const question = await UserQuestion.findOne({ 
-        _id: questionId, 
-        ownerId: userId 
+      const question = await UserQuestion.findOne({
+        _id: questionId,
+        userId: userId
       });
 
       if (!question) {
@@ -208,16 +208,16 @@ export class UserQuestionController {
   // Delete question
   static async deleteQuestion(req: Request, res: Response) {
     try {
-      const userId = req.user?.id;
+      const userId = req.user?.userId;
       const { questionId } = req.params;
 
       if (!userId) {
         return res.status(401).json({ success: false, message: 'Unauthorized' });
       }
 
-      const question = await UserQuestion.findOne({ 
-        _id: questionId, 
-        ownerId: userId 
+      const question = await UserQuestion.findOne({
+        _id: questionId,
+        userId: userId
       });
 
       if (!question) {
@@ -250,7 +250,7 @@ export class UserQuestionController {
   // Import from predefined questions
   static async importPredefinedQuestions(req: Request, res: Response) {
     try {
-      const userId = req.user?.id;
+      const userId = req.user?.userId;
       if (!userId) {
         return res.status(401).json({ success: false, message: 'Unauthorized' });
       }
@@ -258,9 +258,9 @@ export class UserQuestionController {
       const { categoryId, questionIds } = req.body;
 
       // Verify category ownership
-      const category = await UserCategory.findOne({ 
-        _id: categoryId, 
-        ownerId: userId 
+      const category = await UserCategory.findOne({
+        _id: categoryId,
+        userId: userId
       });
 
       if (!category) {
@@ -279,7 +279,7 @@ export class UserQuestionController {
   // Reorder questions
   static async reorderQuestions(req: Request, res: Response) {
     try {
-      const userId = req.user?.id;
+      const userId = req.user?.userId;
       if (!userId) {
         return res.status(401).json({ success: false, message: 'Unauthorized' });
       }
@@ -287,9 +287,9 @@ export class UserQuestionController {
       const { categoryId, questionOrders } = req.body;
 
       // Verify category ownership
-      const category = await UserCategory.findOne({ 
-        _id: categoryId, 
-        ownerId: userId 
+      const category = await UserCategory.findOne({
+        _id: categoryId,
+        userId: userId
       });
 
       if (!category) {

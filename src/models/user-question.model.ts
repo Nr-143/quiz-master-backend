@@ -2,7 +2,7 @@ import mongoose, { Schema, Document } from 'mongoose';
 
 export interface IUserQuestion extends Document {
   categoryId: string;
-  ownerId: string;
+  userId: string;
   question: string;
   options: Array<{
     id: string;
@@ -21,7 +21,7 @@ export interface IUserQuestion extends Document {
 
 const userQuestionSchema = new Schema<IUserQuestion>({
   categoryId: { type: String, required: true, index: true },
-  ownerId: { type: String, required: true, index: true },
+  userId: { type: String, required: true, index: true },
   question: { type: String, required: true },
   options: [{
     id: { type: String, required: true },
@@ -33,12 +33,12 @@ const userQuestionSchema = new Schema<IUserQuestion>({
   tags: [{ type: String }],
   order: { type: Number, default: 0 },
   isFromPredefined: { type: Boolean, default: false },
-  originalQuestionId: { type: String },
+  originalQuestionId: { type: Schema.Types.ObjectId, ref: 'Question' },
   createdAt: { type: Date, default: Date.now },
   updatedAt: { type: Date, default: Date.now }
 });
 
 userQuestionSchema.index({ categoryId: 1, order: 1 });
-userQuestionSchema.index({ ownerId: 1, createdAt: -1 });
+userQuestionSchema.index({ userId: 1, createdAt: -1 });
 
 export const UserQuestion = mongoose.model<IUserQuestion>('UserQuestion', userQuestionSchema);

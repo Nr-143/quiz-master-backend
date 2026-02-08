@@ -2,7 +2,7 @@ import mongoose, { Document, Schema } from 'mongoose';
 
 export interface IExamApplication extends Document {
   examId: mongoose.Types.ObjectId;
-  userId: mongoose.Types.ObjectId;
+  userId: string;
   applicationDate: Date;
   paymentStatus: 'pending' | 'completed' | 'failed' | 'refunded';
   paymentId?: string;
@@ -16,26 +16,26 @@ export interface IExamApplication extends Document {
 }
 
 const examApplicationSchema = new Schema<IExamApplication>({
-  examId: { 
-    type: Schema.Types.ObjectId, 
-    ref: 'Exam', 
-    required: true 
+  examId: {
+    type: Schema.Types.ObjectId,
+    ref: 'Exam',
+    required: true
   },
-  userId: { 
-    type: Schema.Types.ObjectId, 
-    ref: 'User', 
-    required: true 
+  userId: {
+    type: String,
+    ref: 'User',
+    required: true
   },
   applicationDate: { type: Date, default: Date.now },
-  paymentStatus: { 
-    type: String, 
+  paymentStatus: {
+    type: String,
     enum: ['pending', 'completed', 'failed', 'refunded'],
     default: 'pending'
   },
   paymentId: { type: String },
   agreedToTerms: { type: Boolean, required: true },
-  status: { 
-    type: String, 
+  status: {
+    type: String,
     enum: ['applied', 'appeared', 'completed', 'cancelled'],
     default: 'applied'
   },

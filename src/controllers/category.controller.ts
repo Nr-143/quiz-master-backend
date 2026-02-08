@@ -1,12 +1,13 @@
 import { Request, Response } from 'express';
-import { Category } from '../models/category.model';
+import { QuizService } from '../services/quiz.service';
+
+const quizService = new QuizService();
 
 export class CategoryController {
   static async getAllCategories(req: Request, res: Response) {
     try {
-      const categories = await Category.find({ isActive: true })
-        .select('-_id -__v -createdAt -updatedAt -isActive')
-        .lean();
+      // Use logic from QuizService (which handles Redis caching and ID mapping)
+      const categories = await quizService.getAllCategories();
 
       res.json({
         success: true,

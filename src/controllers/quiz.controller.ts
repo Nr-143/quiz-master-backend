@@ -21,12 +21,19 @@ export const getQuiz = async (req: Request, res: Response, next: NextFunction) =
         const level = req.query.level as string;
         const page = parseInt(req.query.page as string) || 1;
         const limit = parseInt(req.query.limit as string) || 10;
+        const onlyQuestions = false;
 
         if (!category) {
             return res.status(400).json({ success: false, message: 'Category is required' });
         }
 
-        const quiz = await quizService.getQuizByCategory(category, level, page, limit);
+        const quiz = await quizService.getQuizByCategory(
+            category,
+            level,
+            page,
+            limit,
+            onlyQuestions,
+        );
         res.status(200).json({
             success: true,
             data: quiz,
@@ -41,7 +48,7 @@ export const validateAnswer = async (req: Request, res: Response, next: NextFunc
     try {
         const { questionId, selectedOption, category } = req.body;
         // @ts-ignore
-        const userId = req.user?.id;
+        const userId = req.user?.userId;
 
         if (!questionId || !selectedOption || !category) {
             return res.status(400).json({
@@ -66,7 +73,7 @@ export const getQuizProgress = async (req: Request, res: Response, next: NextFun
     try {
         const { category } = req.params;
         // @ts-ignore
-        const userId = req.user?.id;
+        const userId = req.user?.userId;
 
         if (!category || !userId) {
             return res.status(400).json({
@@ -94,7 +101,7 @@ export const unlockHint = async (req: Request, res: Response, next: NextFunction
         const targetCategory = category || quizId;
 
         // @ts-ignore
-        const userId = req.user?.id;
+        const userId = req.user?.userId;
 
         if (!questionId || !targetCategory || !userId) {
             return res.status(400).json({

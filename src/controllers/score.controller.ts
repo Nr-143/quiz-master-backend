@@ -31,7 +31,7 @@ export const getLeaderboard = async (req: Request, res: Response, next: NextFunc
 export const getUserStats = async (req: Request, res: Response, next: NextFunction) => {
     try {
         // req.user is populated by protect middleware
-        const stats = await scoreService.getUserStats(req.user.id);
+        const stats = await scoreService.getUserStats(req.user.userId);
         res.status(200).json({
             status: 'success',
             data: { stats },

@@ -3,7 +3,7 @@ import mongoose, { Schema, Document } from 'mongoose';
 export interface IUserCategory extends Document {
   name: string;
   description?: string;
-  ownerId: string;
+  userId: string;
   isPrivate: boolean;
   shareSettings: {
     isShared: boolean;
@@ -20,7 +20,7 @@ export interface IUserCategory extends Document {
 const userCategorySchema = new Schema<IUserCategory>({
   name: { type: String, required: true, trim: true },
   description: { type: String, trim: true },
-  ownerId: { type: String, required: true, index: true },
+  userId: { type: String, required: true, index: true },
   isPrivate: { type: Boolean, default: true },
   shareSettings: {
     isShared: { type: Boolean, default: false },
@@ -34,7 +34,7 @@ const userCategorySchema = new Schema<IUserCategory>({
   updatedAt: { type: Date, default: Date.now }
 });
 
-userCategorySchema.index({ ownerId: 1, createdAt: -1 });
+userCategorySchema.index({ userId: 1, createdAt: -1 });
 userCategorySchema.index({ 'shareSettings.shareLink': 1 });
 
 export const UserCategory = mongoose.model<IUserCategory>('UserCategory', userCategorySchema);
